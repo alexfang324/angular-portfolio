@@ -1,0 +1,32 @@
+<div class="header">
+  <h1>{{project?.name}}</h1>
+  <p>{{project?.shortDescription}}</p>
+</div>
+<div class="detail-section">
+  <div class="main-section">
+    <div class="slider-container">
+      <img class="slider-img" [src]="project?.imgPath" />
+    </div>
+    <div>
+      <h1>{{project?.name}}</h1>
+      <p>{{project?.longDescription}}</p>
+    </div>
+  </div>
+  <div class="tech-section">
+    <h1>About this project</h1>
+    <div class="tech-content">
+      <div>
+        <h2>Technologies</h2>
+        <ul class="tech-list">
+          <li *ngFor="let tech of project?.techs">{{tech}}</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Hightlights</h2>
+        <ul class="highlight-list">
+          <li *ngFor="let highlight of project?.highlights">{{highlight}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
