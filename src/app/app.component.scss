@@ -6,6 +6,71 @@
   box-sizing: border-box;
 }
 
+nav {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+}
+
+ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    padding: 20px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+}
+
 main {
   margin: 0 auto;
+  min-width: 400px;
+}
+
+.line-container {
+  position: relative;
+  width: 200px; /* Adjust the width of the line container */
+  height: 200px; /* Adjust the height of the line container */
+  background-color: #f0f0f0; /* Background color of the line container */
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* Adjust the thickness of the line */
+  background-color: #000; /* Color of the line */
+  transform-origin: left center; /* Set the transformation origin to the left */
+  animation: drawLine 2s forwards; /* Duration of the animation */
+}
+
+@keyframes drawLine {
+  0% {
+    width: 0; /* Start with width 0 */
+    transform: rotate(45deg); /* Start with no rotation */
+  }
+  100% {
+    width: 100%; /* End with full width */
+    transform: rotate(45deg); /* Rotate the line by 45 degrees */
+  }
 }

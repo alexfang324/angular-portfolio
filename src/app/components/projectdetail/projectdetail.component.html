@@ -6,6 +6,7 @@
   <div class="main-section">
     <div class="slider-container">
       <img class="slider-img" [src]="project?.imgPath" />
+      <div class="hover-text">Hover Me</div>
     </div>
     <div>
       <h1>{{project?.name}}</h1>
@@ -15,6 +16,12 @@
   <div class="tech-section">
     <h1>About this project</h1>
     <div class="tech-content">
+      <div>
+        <h2>Tags</h2>
+        <ul class="tech-list">
+          <li *ngFor="let tag of project?.tags">{{tag}}</li>
+        </ul>
+      </div>
       <div>
         <h2>Technologies</h2>
         <ul class="tech-list">
@@ -29,4 +36,7 @@
       </div>
     </div>
   </div>
+</div>
+<div class="snapshot-section">
+  <img *ngFor="let imgPath of project?.snapshotImgPaths" [src]="imgPath" />
 </div>
