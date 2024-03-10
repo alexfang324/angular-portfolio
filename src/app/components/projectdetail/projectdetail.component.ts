@@ -27,6 +27,14 @@ export class ProjectdetailComponent {
 
   ngOnInit(): void {
     this.getProject();
+    const element = document.getElementById('slider-container');
+    const computedWidth = window
+      .getComputedStyle(element!)
+      .getPropertyValue('width');
+    document.documentElement.style.setProperty(
+      '--slider-container-width',
+      computedWidth
+    );
   }
 
   // add a goBack() method that uses the Location service to go back to the previous page

@@ -1,7 +1,6 @@
 @import "../../../styles.scss";
 
 $header-height: 200px;
-$slider-height: 500px;
 
 *,
 *:before,
@@ -46,9 +45,8 @@ $slider-height: 500px;
 
 .slider-container {
   position: relative;
-  width: 250px;
-  min-width: 250px;
-  height: $slider-height;
+  width: 100%;
+  aspect-ratio: 9 / 16;
   overflow: hidden;
   border: solid 1px black;
   margin: 0 auto;
@@ -57,7 +55,10 @@ $slider-height: 500px;
 
   &:hover {
     .slider-img {
-      transform: translateY(calc($slider-height - 100%));
+      //the slider-container-width property is calculated using javascript
+      transform: translateY(
+        calc(-100% + var(--slider-container-width) / 9 * 16)
+      );
     }
 
     .hover-text {
@@ -73,7 +74,7 @@ $slider-height: 500px;
 
 .hover-text {
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 1;
@@ -149,6 +150,10 @@ $slider-height: 500px;
   .main-section {
     flex-direction: row;
   }
+  .slider-container {
+    width: 50%;
+    min-width: 50%;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -158,19 +163,35 @@ $slider-height: 500px;
 }
 
 .snapshot-section {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
   padding: $mobile-padding;
   background-color: lightgrey;
 
   img {
-    width: 250px;
-    height: 350px;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 9 / 12;
     object-fit: cover;
+    justify-self: center;
+  }
+}
 
-    &:nth-child(2n) {
-      margin-top: 20px;
+@media (min-width: 500px) {
+  .snapshot-section {
+    grid-template-columns: repeat(2, 1fr);
+
+    img {
+      &:nth-child(2n) {
+        margin-top: 20px;
+      }
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .snapshot-section {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
