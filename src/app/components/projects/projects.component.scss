@@ -1,0 +1,77 @@
+@import "../../../styles.scss";
+
+$min-tile-width: 250px; //tile width of each project in the grid
+
+.projects-section {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: $mobile-padding;
+}
+
+.sidebar {
+  min-width: 150px;
+  background-color: rgb(175, 241, 219);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: fit-content;
+}
+li {
+  list-style: none;
+  padding-bottom: 5px;
+}
+li:not(.heading) {
+  margin-left: 20px;
+}
+
+.project-grid {
+  display: grid;
+  position: relative;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax($min-tile-width, 1fr));
+  gap: 20px;
+  align-items: center;
+}
+
+.grid-item {
+  padding: 10px;
+  border: solid grey 1px;
+  border-radius: 10px;
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  h1 {
+    text-align: center;
+  }
+}
+
+.grid-item:nth-of-type(2n) {
+  margin-top: 50px;
+}
+
+//===========================================
+//===========================================
+//===========================================
+//stuff below doesn't work
+
+.overlay {
+  position: absolute;
+  background-color: black;
+  transition: all 0.3s ease; /* Transition for smooth movement */
+  pointer-events: none; /* Allows mouse events to pass through the overlay */
+}
+
+.grid-item:hover {
+  background-color: rgb(175, 241, 219);
+  transition: all 0.3s ease;
+}
+
+.grid-item:hover .overlay {
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+}

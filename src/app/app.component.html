@@ -1,5 +1,5 @@
 <nav>
-  <img src="assets/images/audioengine_snapshot1.png" />
+  <img id="nav-logo" src="assets/images/logo.png" />
   <div class="name">Alex Fang</div>
   <ul>
     <li>
@@ -16,14 +16,21 @@
     </li>
   </ul>
 </nav>
-
-<!-- <canvas #canvas>
-</canvas>
-<div class="line-container">
-  <div class="line"></div>
-</div>
- -->
-
 <main>
   <router-outlet></router-outlet>
 </main>
+
+
+<div #loadScreen id="load-screen">
+  <div class="logo">
+    <div class="line hexagon hex-line1"></div>
+    <div class="line hexagon hex-line2"></div>
+    <div class="line hexagon hex-line3"></div>
+    <div class="line hexagon hex-line4"></div>
+    <div class="line hexagon hex-line5"></div>
+    <div class="line hexagon hex-line6"></div>
+    <div class="line char-line1"></div>
+    <div class="line char-line2"></div>
+    <div class="line char-line3"></div>
+  </div>
+</div>

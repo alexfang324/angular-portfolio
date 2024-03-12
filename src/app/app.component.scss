@@ -1,5 +1,7 @@
 @import "../styles.scss";
 
+$logo-size: 200px; //loading page animation logo container width;
+
 *,
 *:before,
 *:after {
@@ -11,6 +13,12 @@ nav {
   position: relative;
   justify-content: space-between;
   align-items: center;
+}
+#nav-logo {
+  margin-left: 20px;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
 main {
@@ -39,42 +47,130 @@ ul {
   }
 }
 
-img {
-  width: 50px;
-  height: 50px;
-  margin-left: 20px;
-}
-
 main {
   margin: 0 auto;
   min-width: 400px;
 }
 
-// .line-container {
-//   position: relative;
-//   width: 200px; /* Adjust the width of the line container */
-//   height: 200px; /* Adjust the height of the line container */
-//   background-color: #f0f0f0; /* Background color of the line container */
-// }
+#load-screen {
+  display: none;
+  position: absolute;
+  align-content: center;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: lightgray;
+}
+#load-screen.active {
+  display: block;
+}
 
-// .line {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 0;
-//   height: 2px; /* Adjust the thickness of the line */
-//   background-color: #000; /* Color of the line */
-//   transform-origin: left center; /* Set the transformation origin to the left */
-//   animation: drawLine 2s forwards; /* Duration of the animation */
-// }
+.logo {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $logo-size;
+  height: $logo-size;
+  padding: 0;
+  margin: 0;
+}
 
-// @keyframes drawLine {
-//   0% {
-//     width: 0; /* Start with width 0 */
-//     transform: rotate(45deg); /* Start with no rotation */
-//   }
-//   100% {
-//     width: 100%; /* End with full width */
-//     transform: rotate(45deg); /* Rotate the line by 45 degrees */
-//   }
-// }
+.line {
+  position: absolute;
+  width: 0;
+  height: 5px; /* Adjust the thickness of the line */
+  background-color: darkcyan; /* Color of the line */
+  transform-origin: left center; /* Set the transformation origin to the left */
+}
+
+.hexagon {
+  animation: drawHexagon 1s forwards; /* Duration of the animation */
+}
+
+//The hexagon line numbering starts from the top right edge in clockwise fashion
+//assuming being inscribed in a square of length $logo-size, each side of the hexagon
+//is of length $logo-size/2
+.hex-line1 {
+  left: calc($logo-size / 2);
+  top: 0;
+  transform: rotate(30deg);
+}
+.hex-line2 {
+  left: calc(0.933 * $logo-size);
+  top: calc($logo-size / 4);
+  transform: rotate(90deg);
+}
+.hex-line3 {
+  left: calc(0.933 * $logo-size);
+  top: calc($logo-size / 4 * 3);
+  transform: rotate(150deg);
+}
+.hex-line4 {
+  left: calc($logo-size / 2);
+  top: $logo-size;
+  transform: rotate(210deg);
+}
+.hex-line5 {
+  left: calc(0.06699 * $logo-size);
+  top: calc($logo-size / 4 * 3);
+  transform: rotate(270deg);
+}
+.hex-line6 {
+  left: calc(0.06699 * $logo-size);
+  top: calc($logo-size / 4);
+  transform: rotate(330deg);
+}
+
+@keyframes drawHexagon {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: calc($logo-size / 2);
+  }
+}
+
+//values for character lines are arbitrary selected but still remain remains coherent
+//under different $logo-size
+//left stroke of A
+.char-line1 {
+  left: calc($logo-size / 2);
+  top: calc($logo-size / 10);
+  transform: rotate(110deg);
+  animation: drawAngleCharLine 0.5s forwards;
+  animation-delay: 1s;
+}
+//right stroke of A
+.char-line2 {
+  left: calc($logo-size / 2);
+  top: calc($logo-size / 10);
+  transform: rotate(70deg);
+  animation: drawAngleCharLine 0.5s forwards;
+  animation-delay: 1.5s;
+}
+@keyframes drawAngleCharLine {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: calc($logo-size / 1.4);
+  }
+}
+
+.char-line3 {
+  left: calc($logo-size / 2.7);
+  top: calc($logo-size / 2.2);
+  animation: drawHorCharLine 0.2s forwards;
+  animation-delay: 2s;
+}
+
+@keyframes drawHorCharLine {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: calc($logo-size/3.8);
+  }
+}

@@ -1,1 +1,21 @@
-<p>projects works!</p>
+<div class="projects-section">
+  <ul class="sidebar" id="sidebar">
+    <li class="heading" *ngIf="categoryFilter || tagFilter">
+      <b>Filter</b>
+    </li>
+    <li *ngIf="categoryFilter || tagFilter">
+      {{categoryFilter? categoryFilter.name:tagFilter?.name}}
+      <i class="fa fa-trash-o" (click)="clearFilters()"></i>
+    </li>
+    <li class="heading"><b>Categories</b></li>
+    <li *ngFor="let category of categories" (click)="setCategoryFilter(category)">{{category.name}}</li>
+    <li class="heading"><b>Tags</b></li>
+    <li *ngFor="let tag of tags" (click)="setTagFilter(tag)">{{tag.name}}</li>
+  </ul>
+  <div class="project-grid">
+    <div class="grid-item" *ngFor="let project of projects">
+      <img [src]="project.snapshotImgPaths[0]" />
+      <h1>{{project.name}}</h1>
+    </div>
+  </div>
+</div>

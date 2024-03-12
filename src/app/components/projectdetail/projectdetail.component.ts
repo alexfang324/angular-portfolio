@@ -27,6 +27,9 @@ export class ProjectdetailComponent {
 
   ngOnInit(): void {
     this.getProject();
+
+    //use javascript to compute and add the actual width of a width:100% container
+    //as a css customer property for css calculation
     const element = document.getElementById('slider-container');
     const computedWidth = window
       .getComputedStyle(element!)
