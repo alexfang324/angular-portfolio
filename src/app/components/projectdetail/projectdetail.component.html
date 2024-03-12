@@ -17,15 +17,15 @@
     <h1>About this project</h1>
     <div class="tech-content">
       <div>
-        <h2>Tags</h2>
+        <h2>Categories</h2>
         <ul class="tech-list">
-          <li *ngFor="let tag of project?.tags">{{tag}}</li>
+          <li *ngFor="let category of project?.category_ids">{{category}}</li>
         </ul>
       </div>
       <div>
         <h2>Technologies</h2>
         <ul class="tech-list">
-          <li *ngFor="let tech of project?.techs">{{tech}}</li>
+          <li *ngFor="let tag of project?.tag_ids">{{tag}}</li>
         </ul>
       </div>
       <div>

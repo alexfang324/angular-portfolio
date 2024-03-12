@@ -13,11 +13,14 @@ nav {
   position: relative;
   justify-content: space-between;
   align-items: center;
+  border-bottom: solid black 1px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 #nav-logo {
   margin-left: 20px;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -29,12 +32,13 @@ main {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 30px;
+  font-size: 40px;
 }
 
 ul {
   display: flex;
   margin: 0;
+  margin-right: 20px;
   padding: 0;
 
   li {
@@ -44,6 +48,8 @@ ul {
 
   a {
     text-decoration: none;
+    color: inherit;
+    font-size: 20px;
   }
 }
 
@@ -81,6 +87,13 @@ main {
   position: absolute;
   width: 0;
   height: 5px; /* Adjust the thickness of the line */
+  background-color: darkcyan; /* Color of the line */
+  transform-origin: left center; /* Set the transformation origin to the left */
+}
+.char-line {
+  position: absolute;
+  width: 0;
+  height: 8px; /* Adjust the thickness of the line */
   background-color: darkcyan; /* Color of the line */
   transform-origin: left center; /* Set the transformation origin to the left */
 }

@@ -1,7 +1,5 @@
 @import "../../../styles.scss";
 
-$min-tile-width: 250px; //tile width of each project in the grid
-
 .projects-section {
   display: flex;
   gap: 20px;
@@ -16,6 +14,7 @@ $min-tile-width: 250px; //tile width of each project in the grid
   display: flex;
   flex-direction: column;
   padding: 20px;
+  margin: 0;
   height: fit-content;
 }
 li {
@@ -29,27 +28,108 @@ li:not(.heading) {
 .project-grid {
   display: grid;
   position: relative;
-  width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax($min-tile-width, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr;
+  column-gap: 25px;
   align-items: center;
 }
 
 .grid-item {
   padding: 10px;
+  margin-bottom: 25px;
+  width: 250px;
   border: solid grey 1px;
   border-radius: 10px;
-  img {
-    width: 100%;
-    border-radius: 10px;
+
+  &.hidden {
+    display: none;
   }
-  h1 {
+
+  h1,
+  p {
     text-align: center;
+    margin: 10px 0;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis;
   }
 }
 
-.grid-item:nth-of-type(2n) {
-  margin-top: 50px;
+.img-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 12;
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 120%;
+    height: 110%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease;
+
+    //triggered by mouseover
+    //I am shifting slightly less than having img edge against the edge of its container
+    //due to border-radius issue
+    &.shift-left {
+      transform: translate(-42%, -50%);
+    }
+    &.shift-right {
+      transform: translate(-58%, -50%);
+    }
+    &.shift-top {
+      transform: translate(-50%, -46%);
+    }
+    &.shift-bottom {
+      transform: translate(-50%, -54%);
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  //reset margin in other media queries (must use n due to specifity)
+  .grid-item:nth-child(n) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .grid-item:nth-child(2n) {
+    margin-top: 50px;
+    margin-bottom: -25px; //works with top margin to maintain row gap
+  }
+}
+
+@media (min-width: 1100px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-item:nth-child(n) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .grid-item:nth-child(3n-1) {
+    margin-top: 50px;
+    margin-bottom: -25px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .project-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-item:nth-child(n) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .grid-item:nth-child(2n) {
+    margin-top: 50px;
+    margin-bottom: -25px;
+  }
 }
 
 //===========================================

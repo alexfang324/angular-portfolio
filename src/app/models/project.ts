@@ -5,7 +5,7 @@ export interface Project {
   snapshotImgPaths: string[];
   shortDescription: string;
   longDescription: string;
-  tags: string[];
-  techs: string[];
+  category_ids: number[];
+  tag_ids: number[];
   highlights: string[];
 }
