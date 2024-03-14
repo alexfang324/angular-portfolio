@@ -19,6 +19,7 @@ export class ProjectdetailComponent {
   ) {}
 
   project?: Project;
+  observer?: IntersectionObserver;
 
   getProject(): void {
     const id = this.route.snapshot.paramMap.get('id');

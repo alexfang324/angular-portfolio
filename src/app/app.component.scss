@@ -93,7 +93,7 @@ main {
 .char-line {
   position: absolute;
   width: 0;
-  height: 8px; /* Adjust the thickness of the line */
+  height: 10px; /* Adjust the thickness of the line */
   background-color: darkcyan; /* Color of the line */
   transform-origin: left center; /* Set the transformation origin to the left */
 }
@@ -105,35 +105,36 @@ main {
 //The hexagon line numbering starts from the top right edge in clockwise fashion
 //assuming being inscribed in a square of length $logo-size, each side of the hexagon
 //is of length $logo-size/2
+//the trailing rotation degree is tuned to hide away the line corners from sticking out
 .hex-line1 {
   left: calc($logo-size / 2);
   top: 0;
-  transform: rotate(30deg);
+  transform: rotate(30.7deg);
 }
 .hex-line2 {
   left: calc(0.933 * $logo-size);
   top: calc($logo-size / 4);
-  transform: rotate(90deg);
+  transform: rotate(90.5deg);
 }
 .hex-line3 {
   left: calc(0.933 * $logo-size);
   top: calc($logo-size / 4 * 3);
-  transform: rotate(150deg);
+  transform: rotate(150.5deg);
 }
 .hex-line4 {
   left: calc($logo-size / 2);
   top: $logo-size;
-  transform: rotate(210deg);
+  transform: rotate(210.7deg);
 }
 .hex-line5 {
   left: calc(0.06699 * $logo-size);
   top: calc($logo-size / 4 * 3);
-  transform: rotate(270deg);
+  transform: rotate(270.6deg);
 }
 .hex-line6 {
   left: calc(0.06699 * $logo-size);
   top: calc($logo-size / 4);
-  transform: rotate(330deg);
+  transform: rotate(330.7deg);
 }
 
 @keyframes drawHexagon {
@@ -141,7 +142,7 @@ main {
     width: 0;
   }
   100% {
-    width: calc($logo-size / 2);
+    width: calc($logo-size / 1.96);
   }
 }
 
@@ -149,19 +150,24 @@ main {
 //under different $logo-size
 //left stroke of A
 .char-line1 {
-  left: calc($logo-size / 2);
-  top: calc($logo-size / 10);
-  transform: rotate(110deg);
+  left: calc($logo-size / 4);
+  top: calc($logo-size/1.3);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform: rotate(291.5deg);
   animation: drawAngleCharLine 0.5s forwards;
   animation-delay: 1s;
 }
+
 //right stroke of A
 .char-line2 {
   left: calc($logo-size / 2);
   top: calc($logo-size / 10);
-  transform: rotate(70deg);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transform: rotate(67.5deg);
   animation: drawAngleCharLine 0.5s forwards;
-  animation-delay: 1.5s;
+  animation-delay: 1.45s;
 }
 @keyframes drawAngleCharLine {
   0% {
@@ -173,8 +179,9 @@ main {
 }
 
 .char-line3 {
-  left: calc($logo-size / 2.7);
+  left: calc($logo-size / 2.7 + $logo-size/3.8);
   top: calc($logo-size / 2.2);
+  transform: rotate(180deg);
   animation: drawHorCharLine 0.2s forwards;
   animation-delay: 2s;
 }

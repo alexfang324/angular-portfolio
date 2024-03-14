@@ -131,27 +131,3 @@ li:not(.heading) {
     margin-bottom: -25px;
   }
 }
-
-//===========================================
-//===========================================
-//===========================================
-//stuff below doesn't work
-
-.overlay {
-  position: absolute;
-  background-color: black;
-  transition: all 0.3s ease; /* Transition for smooth movement */
-  pointer-events: none; /* Allows mouse events to pass through the overlay */
-}
-
-.grid-item:hover {
-  background-color: rgb(175, 241, 219);
-  transition: all 0.3s ease;
-}
-
-.grid-item:hover .overlay {
-  width: 120%;
-  height: 120%;
-  top: -10%;
-  left: -10%;
-}
