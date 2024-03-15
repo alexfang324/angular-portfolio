@@ -31,7 +31,7 @@ $header-height: 200px;
 
 .detail-section {
   display: flex;
-  padding: 0 $mobile-padding;
+  padding: 0 $small-spacing;
   flex-direction: column;
   align-items: center;
 }
@@ -134,7 +134,7 @@ $header-height: 200px;
 
 @media (min-width: 600px) {
   .detail-section {
-    padding: 0 $tablet-padding;
+    padding: 0 $medium-spacing;
   }
 
   .tech-content {
@@ -144,7 +144,7 @@ $header-height: 200px;
 
 @media (min-width: 769px) {
   .detail-section {
-    padding: 0 $tablet-wide-padding;
+    padding: 0 $large-spacing;
   }
 
   .main-section {
@@ -166,7 +166,7 @@ $header-height: 200px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  padding: $mobile-padding;
+  padding: $small-spacing;
   background-color: lightgrey;
 
   img {
