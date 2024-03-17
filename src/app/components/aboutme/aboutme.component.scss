@@ -1,10 +1,9 @@
 @import "../../../styles.scss";
 
 .narrative {
-  width: 90%;
-  transform: translateX(10%);
-  font-size: 40px;
-  margin: 20px auto;
+  box-sizing: border-box;
+  font-size: 30px;
+  margin: 20px 5%;
 }
 
 .gradient-overlay {
@@ -21,11 +20,13 @@
   pointer-events: none;
 }
 
-.researcher-section {
+.about-me-section {
+  margin: auto $small-spacing;
+}
+
+.section {
   position: relative;
   color: black;
-  background-color: lightcoral;
-  margin: auto $small-spacing;
   border-radius: 5px;
 
   .section-wrapper {
@@ -36,6 +37,10 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
+  }
+
+  h1 {
+    margin: 0;
   }
 
   .image-container {
@@ -54,15 +59,22 @@
     }
   }
 
-  .content {
+  .sub-section {
     opacity: 0;
-    ol {
+    ol,
+    ul {
       padding-left: 1em;
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-bottom: 0;
     }
 
     h2 {
       display: inline-block;
       margin: 0;
+      margin-top: 20px;
     }
 
     b {
@@ -77,12 +89,13 @@
 @media (min-width: 768px) {
   .narrative {
     font-size: 50px;
-    transform: translateX(5%);
   }
 
-  .researcher-section {
+  .about-me-section {
     margin: auto $medium-spacing;
+  }
 
+  .section {
     .section-wrapper {
       padding: $small-spacing;
     }
@@ -96,18 +109,15 @@
 }
 
 @media (min-width: 1024px) {
-  .narrative {
-    font-size: 50px;
-    transform: translateX(5%);
+  .about-me-section {
+    margin: auto $large-spacing;
   }
 
-  .researcher-section {
-    margin: auto $small-spacing;
-
+  .section {
     .section-wrapper {
       flex-direction: row;
       gap: 20px;
-      padding: 0 $small-spacing;
+      padding: $small-spacing;
     }
 
     .image-container {
@@ -126,15 +136,130 @@
   }
 }
 
-//used by javascript with Oberserver Intersection API
-.fade-in {
-  animation: fade-in 4s forwards;
-  animation-delay: 1s;
+.reverse-section {
+  .section-wrapper {
+    flex-direction: column-reverse;
+  }
 }
-.fade-in-after {
-  animation: none;
-  animation: fade-in 4s forwards;
-  animation-delay: 3s;
+
+@media (min-width: 1024px) {
+  .reverse-section {
+    .section-wrapper {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.researcher-section {
+  background-color: lightcoral;
+}
+.enterpreneur-section {
+  background-color: lightsalmon;
+}
+.process-section {
+  background-color: lightpink;
+}
+
+.summary-section {
+  table {
+    opacity: 0;
+    margin: auto;
+  }
+
+  td {
+    opacity: 0;
+  }
+
+  tr:first-child {
+    height: 200px;
+  }
+
+  tr:not(:first-child) {
+    vertical-align: top;
+  }
+
+  td:not(.spacer) {
+    width: 200px;
+  }
+
+  .spacer {
+    width: 50px;
+    height: 100%;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .image-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .summary-section {
+    tr {
+      display: block;
+      float: left;
+    }
+    tr:first-child {
+      padding-right: 20px;
+    }
+    td {
+      display: block;
+      margin: 0;
+      height: 200px;
+    }
+    tr:not(:first-child) td {
+      width: calc(100vw - 350px);
+    }
+    .spacer {
+      height: 50px;
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .summary-section {
+    td {
+      width: 150px !important;
+    }
+    td:not(.spacer) {
+      height: 150px !important;
+    }
+    tr:not(:first-child) td {
+      width: calc(100vw - 280px) !important;
+    }
+    .image-container {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+//used by javascript with Oberserver Intersection API to produce fade in when on screen effect
+//generate a list of fading effects different delays
+@for $i from 1 through 10 {
+  .fade-in-after-#{$i} {
+    animation: none; //clear default setting of any parent setting
+    animation: fade-in 3s forwards;
+    animation-delay: #{$i}s;
+  }
 }
 
 @keyframes fade-in {

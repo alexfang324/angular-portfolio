@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-aboutme',
@@ -10,9 +9,11 @@ import { filter } from 'rxjs';
   styleUrl: './aboutme.component.scss',
 })
 export class AboutmeComponent {
-  observer?: IntersectionObserver;
-
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private renderer: Renderer2,
+    private el: ElementRef
+  ) {}
 
   ngOnInit(): void {
     this.wordByWordFadeIn();
@@ -20,27 +21,30 @@ export class AboutmeComponent {
 
   ngAfterViewInit(): void {
     this.wordByWordFadeIn();
-    this.setupFadeInObserver();
+    this.setupFadeInObservers();
   }
 
   //use Intersection Observer API to add animation to elmeents when they're scrolled into view
-  setupFadeInObserver(): void {
-    this.observer = new IntersectionObserver((entries) => {
+  setupFadeInObservers(): void {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const element = entry.target;
+        const targetElement = entry.target;
         if (entry.isIntersecting) {
-          element!.classList.add('fade-in');
+          targetElement!.classList.add('fade-in-after-1');
           return;
         }
-
-        //remove class when element is out of screen so the effect can be replayed
-        // element!.classList.remove('fade-in');
+        // Remove class when element is out of the viewport
+        // targetElement!.classList.remove('fade-in-after-1');
       });
     });
 
-    this.observer.observe(document.querySelector('.fade-in-element')!);
+    const elementsToObserve = document.querySelectorAll('.fade-in-element');
+    elementsToObserve.forEach((element) => {
+      observer.observe(element);
+    });
   }
 
+  //NOTE: This method only works for paragraph tag
   wordByWordFadeIn(): void {
     var paragraphs = document.querySelectorAll('[class*="word-by-word"]');
     paragraphs.forEach(function (paragraph) {
