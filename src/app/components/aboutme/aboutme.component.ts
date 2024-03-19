@@ -1,5 +1,4 @@
-import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-aboutme',
@@ -9,11 +8,7 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrl: './aboutme.component.scss',
 })
 export class AboutmeComponent {
-  constructor(
-    private router: Router,
-    private renderer: Renderer2,
-    private el: ElementRef
-  ) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.wordByWordFadeIn();
@@ -26,17 +21,20 @@ export class AboutmeComponent {
 
   //use Intersection Observer API to add animation to elmeents when they're scrolled into view
   setupFadeInObservers(): void {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const targetElement = entry.target;
-        if (entry.isIntersecting) {
-          targetElement!.classList.add('fade-in-after-1');
-          return;
-        }
-        // Remove class when element is out of the viewport
-        // targetElement!.classList.remove('fade-in-after-1');
-      });
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const targetElement = entry.target;
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+            targetElement!.classList.add('fade-in-parent');
+            return;
+          }
+          // Remove class when element is out of the viewport
+          // targetElement!.classList.remove('fade-in-parent');
+        });
+      },
+      { threshold: 0.3 } // Set triggering threshold to 50% visibility element in view
+    );
 
     const elementsToObserve = document.querySelectorAll('.fade-in-element');
     elementsToObserve.forEach((element) => {

@@ -15,7 +15,7 @@
   <div class="project-grid">
     <div class="grid-item" *ngFor="let project of projects"
       [class.hidden]="(categoryFilter && !project.category_ids.includes(categoryFilter.id)) || (tagFilter && !project.tag_ids.includes(tagFilter.id))">
-      <div class="img-container">
+      <div class="img-container" (click)="redirectToDetailPage(project.id)">
         <img [src]="project.snapshotImgPaths[0]" (mouseover)="shiftImage($event)" (mouseout)="unShiftImage($event)" />
       </div>
       <h1>{{project.name}}</h1>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
+import { RouterService } from '../../services/router.service';
 import { Project } from '../../models/project';
 import { CommonModule } from '@angular/common';
 import { Category } from '../../models/category';
@@ -19,7 +20,10 @@ export class ProjectsComponent {
   categoryFilter: Category | undefined;
   tagFilter: Tag | undefined;
 
-  constructor(private projectService: ProjectService) {}
+  constructor(
+    private projectService: ProjectService,
+    private routerService: RouterService
+  ) {}
 
   ngOnInit(): void {
     this.getPageContent();
@@ -77,5 +81,9 @@ export class ProjectsComponent {
         element.classList.remove(className);
       }
     });
+  }
+
+  redirectToDetailPage(id: string) {
+    this.routerService.redirectToProjectDetailPage(id);
   }
 }

@@ -8,6 +8,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { filter } from 'rxjs';
+import { RouterService } from './services/router.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,9 @@ import { filter } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private router: Router) {}
+  isMenuOpen: boolean = false;
+
+  constructor(private router: Router, private routerService: RouterService) {}
 
   @ViewChild('loadScreen') loadScreenElement!: ElementRef<HTMLDivElement>;
 
@@ -33,11 +36,19 @@ export class AppComponent {
       });
   }
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
   showLoadingPage(): void {
     this.loadScreenElement.nativeElement.classList.add('active');
 
     setTimeout(() => {
       this.loadScreenElement.nativeElement.classList.remove('active');
     }, 3000);
+  }
+
+  redirectToHomePage(): void {
+    this.routerService.redirectToHomePage();
   }
 }

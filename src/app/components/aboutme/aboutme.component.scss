@@ -252,10 +252,16 @@
   }
 }
 
-//used by javascript with Oberserver Intersection API to produce fade in when on screen effect
-//generate a list of fading effects different delays
+//used by javascript with Oberserver Intersection API to produce fade in element is scrolled into
+//view. The parent class is the default class to be used for an element. Fading of
+//children elements can be set by using the fade-in-after-x class
+.fade-in-parent {
+  animation: fade-in 3s forwards;
+  animation-delay: 0.5s;
+}
+
 @for $i from 1 through 10 {
-  .fade-in-after-#{$i} {
+  .fade-in-parent .fade-in-after-#{$i} {
     animation: none; //clear default setting of any parent setting
     animation: fade-in 3s forwards;
     animation-delay: #{$i}s;
