@@ -42,7 +42,7 @@
     </div>
   </div>
 </nav>
-<main>
+<main [class]="isMenuOpen?'nav-open':''">
   <router-outlet></router-outlet>
 </main>
 

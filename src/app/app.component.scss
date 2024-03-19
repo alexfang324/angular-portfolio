@@ -131,6 +131,9 @@ main {
     text-decoration: none;
     color: inherit;
     font-size: 20px;
+    &:hover {
+      color: $on-hover-color;
+    }
   }
 }
 
@@ -140,20 +143,21 @@ main {
   ul {
     flex-direction: column;
     position: absolute;
-    top: 0;
+    top: $nav-height;
     left: 0;
-    width: 100%;
-    transform: translateY(-150px);
-    background-color: lightgray;
+    width: 200px;
+    height: 100vh;
+    transform: translateX(-100%);
+    background-color: rgb(236, 236, 236);
     z-index: 100;
-    transition: transform 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     opacity: 0;
     margin: 0;
     padding: 0;
   }
 
   ul.open {
-    transform: translateY($nav-height);
+    transform: translateX(0);
     opacity: 1;
   }
 
@@ -167,6 +171,10 @@ main {
     text-decoration: none;
     color: inherit;
     font-size: 20px;
+
+    &:hover {
+      color: $on-hover-color;
+    }
   }
 }
 
@@ -185,6 +193,21 @@ main {
 main {
   margin: 0 auto;
   min-width: 400px;
+}
+
+main.nav-open {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
 }
 
 #load-screen {

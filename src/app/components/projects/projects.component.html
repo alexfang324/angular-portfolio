@@ -1,17 +1,19 @@
 <div class="projects-section">
-  <ul class="sidebar" id="sidebar">
-    <li class="heading" *ngIf="categoryFilter || tagFilter">
-      <b>Filter</b>
-    </li>
-    <li *ngIf="categoryFilter || tagFilter">
-      {{categoryFilter? categoryFilter.name:tagFilter?.name}}
-      <i class="fa fa-trash-o" (click)="clearFilters()"></i>
-    </li>
-    <li class="heading"><b>Categories</b></li>
+  <div class="sidebar" id="sidebar">
+    <div class="selected-filter">
+      <span class="heading">
+        <b>Selected</b>
+      </span>
+      <span class="selected-filter-name" *ngIf="categoryFilter || tagFilter">
+        {{categoryFilter? categoryFilter.name:tagFilter?.name}}
+        <i class="fa fa-trash-o trash-icon" (click)="clearFilters()"></i>
+      </span>
+    </div>
+    <span class="heading"><b>Categories</b></span>
     <li *ngFor="let category of categories" (click)="setCategoryFilter(category)">{{category.name}}</li>
-    <li class="heading"><b>Tags</b></li>
+    <span class="heading"><b>Tags</b></span>
     <li *ngFor="let tag of tags" (click)="setTagFilter(tag)">{{tag.name}}</li>
-  </ul>
+  </div>
   <div class="project-grid">
     <div class="grid-item" *ngFor="let project of projects"
       [class.hidden]="(categoryFilter && !project.category_ids.includes(categoryFilter.id)) || (tagFilter && !project.tag_ids.includes(tagFilter.id))">

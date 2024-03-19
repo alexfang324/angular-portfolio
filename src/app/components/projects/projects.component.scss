@@ -16,13 +16,35 @@
   padding: 20px;
   margin: 0;
   height: fit-content;
-}
-li {
-  list-style: none;
-  padding-bottom: 5px;
-}
-li:not(.heading) {
-  margin-left: 20px;
+
+  span {
+    padding-bottom: 5px;
+  }
+
+  .selected-filter {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+  }
+
+  .trash-icon:hover {
+    color: $on-hover-color;
+  }
+
+  li {
+    list-style: none;
+    padding-bottom: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: $on-hover-color;
+    }
+  }
+
+  li:not(.heading),
+  .selected-filter-name {
+    margin-left: 20px;
+  }
 }
 
 .project-grid {
