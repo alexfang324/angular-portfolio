@@ -1,4 +1,10 @@
-import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  AfterViewInit,
+  ElementRef,
+  HostListener,
+} from '@angular/core';
 import {
   NavigationEnd,
   Router,
@@ -19,6 +25,7 @@ import { RouterService } from './services/router.service';
 })
 export class AppComponent {
   isMenuOpen: boolean = false;
+  screenWidth: number = 0;
 
   constructor(private router: Router, private routerService: RouterService) {}
 
@@ -34,6 +41,13 @@ export class AppComponent {
           this.showLoadingPage();
         }
       });
+
+    this.getScreenSize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  getScreenSize() {
+    this.screenWidth = window.innerWidth;
   }
 
   toggleMenu() {

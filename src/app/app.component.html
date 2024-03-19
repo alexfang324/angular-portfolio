@@ -2,7 +2,7 @@
   <img id="nav-logo" src="assets/images/logo.png" (click)="redirectToHomePage()" />
   <div class="name">Alex Fang</div>
   <div class="hamburger-btn" (click)="toggleMenu()">=</div>
-  <ul>
+  <ul *ngIf="isMenuOpen || screenWidth >= 900px">
     <li>
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
         ariaCurrentWhenActive="page">Home</a>
