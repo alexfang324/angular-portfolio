@@ -55,11 +55,10 @@ export class AppComponent {
   }
 
   showLoadingPage(): void {
-    this.loadScreenElement.nativeElement.classList.add('active');
-
-    setTimeout(() => {
-      this.loadScreenElement.nativeElement.classList.remove('active');
-    }, 3000);
+    // this.loadScreenElement.nativeElement.classList.add('active');
+    // setTimeout(() => {
+    //   this.loadScreenElement.nativeElement.classList.remove('active');
+    // }, 3000);
   }
 
   redirectToHomePage(): void {
