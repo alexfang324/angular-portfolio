@@ -96,3 +96,18 @@
     }
   }
 }
+
+.about-me-section {
+  .panel {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    margin: auto;
+    width: 60%;
+    min-width: 350px;
+  }
+
+  img {
+    width: 40%;
+  }
+}
