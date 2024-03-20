@@ -53,6 +53,9 @@ export class AppComponent {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
 
   showLoadingPage(): void {
     // this.loadScreenElement.nativeElement.classList.add('active');

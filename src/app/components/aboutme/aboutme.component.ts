@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Scroll } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-aboutme',
@@ -8,6 +10,7 @@ import { Component } from '@angular/core';
   styleUrl: './aboutme.component.scss',
 })
 export class AboutmeComponent {
+  router: any;
   constructor() {}
 
   ngOnInit(): void {

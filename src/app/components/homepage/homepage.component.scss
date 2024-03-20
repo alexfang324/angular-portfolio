@@ -53,8 +53,33 @@
   }
 }
 
+.about-me-section {
+  .panel {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    margin: auto;
+    margin-top: 20px;
+    width: 60%;
+    min-width: 350px;
+    max-width: 700px;
+  }
+
+  img {
+    width: 40%;
+    max-width: 200px;
+  }
+  h1 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 10px;
+  }
+}
+
 @media (min-width: 500px) {
-  .main-content {
+  .main-content,
+  .about-me-section {
     h1 {
       font-size: 18px;
     }
@@ -65,7 +90,8 @@
 }
 
 @media (min-width: 600px) {
-  .main-content {
+  .main-content,
+  .about-me-section {
     h1 {
       font-size: 22px;
     }
@@ -97,17 +123,47 @@
   }
 }
 
-.about-me-section {
-  .panel {
-    display: flex;
-    align-items: center;
-    gap: 10%;
-    margin: auto;
-    width: 60%;
-    min-width: 350px;
-  }
+// =========================================
+.carousel {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
+.tile {
+  flex: 0 0 30%; /* Set initial width for tiles */
+  height: 200px;
+  border: 1px solid #ccc;
+  text-align: center;
+  transition: transform 0.5s ease;
 
   img {
-    width: 40%;
+    width: 200px;
   }
+}
+
+.center-tile {
+  transform: scale(1.1); /* Make center tile slightly larger */
+  z-index: 2; /* Bring center tile to the front */
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.left-arrow {
+  left: -10px;
+}
+
+.right-arrow {
+  right: -10px;
 }

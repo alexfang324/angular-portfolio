@@ -28,15 +28,15 @@
       <ul [ngClass]="{'open': isMenuOpen}">
         <li>
           <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page">Home</a>
+            ariaCurrentWhenActive="page" (click)="closeMenu()">Home</a>
         </li>
         <li>
           <a routerLink="/about-me" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page">About Me</a>
+            ariaCurrentWhenActive="page" (click)="closeMenu()">About Me</a>
         </li>
         <li>
           <a routerLink="/projects" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page">Projects</a>
+            ariaCurrentWhenActive="page" (click)="closeMenu()">Projects</a>
         </li>
       </ul>
     </div>

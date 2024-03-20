@@ -1,3 +1,4 @@
+import { Tag } from './tag';
 export interface Project {
   id: string;
   name: string;
@@ -7,5 +8,6 @@ export interface Project {
   longDescription: string;
   category_ids: number[];
   tag_ids: number[];
+  tags?: Tag[];
   highlights: string[];
 }

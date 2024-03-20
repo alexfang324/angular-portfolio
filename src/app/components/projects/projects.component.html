@@ -4,24 +4,23 @@
       <span class="heading">
         <b>Selected</b>
       </span>
-      <span class="selected-filter-name" *ngIf="categoryFilter || tagFilter">
-        {{categoryFilter? categoryFilter.name:tagFilter?.name}}
+      <span class="selected-filter-name" *ngIf="tagFilter">
+        {{tagFilter?.name}}
         <i class="fa fa-trash-o trash-icon" (click)="clearFilters()"></i>
       </span>
     </div>
-    <span class="heading"><b>Categories</b></span>
-    <li *ngFor="let category of categories" (click)="setCategoryFilter(category)">{{category.name}}</li>
     <span class="heading"><b>Tags</b></span>
     <li *ngFor="let tag of tags" (click)="setTagFilter(tag)">{{tag.name}}</li>
   </div>
   <div class="project-grid">
     <div class="grid-item" *ngFor="let project of projects"
-      [class.hidden]="(categoryFilter && !project.category_ids.includes(categoryFilter.id)) || (tagFilter && !project.tag_ids.includes(tagFilter.id))">
+      [class.hidden]="tagFilter && !project.tag_ids.includes(tagFilter.id)">
       <div class="img-container" (click)="redirectToDetailPage(project.id)">
         <img [src]="project.snapshotImgPaths[0]" (mouseover)="shiftImage($event)" (mouseout)="unShiftImage($event)" />
       </div>
       <h1>{{project.name}}</h1>
       <p>{{project.shortDescription}}</p>
+      <span class="tag" *ngFor="let tag of project.tags">{{tag.name}}</span>
     </div>
   </div>
 </div>

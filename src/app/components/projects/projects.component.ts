@@ -3,7 +3,6 @@ import { ProjectService } from '../../services/project.service';
 import { RouterService } from '../../services/router.service';
 import { Project } from '../../models/project';
 import { CommonModule } from '@angular/common';
-import { Category } from '../../models/category';
 import { Tag } from '../../models/tag';
 
 @Component({
@@ -15,9 +14,7 @@ import { Tag } from '../../models/tag';
 })
 export class ProjectsComponent {
   projects?: Project[];
-  categories?: Category[];
   tags?: Tag[];
-  categoryFilter: Category | undefined;
   tagFilter: Tag | undefined;
 
   constructor(
@@ -31,18 +28,20 @@ export class ProjectsComponent {
 
   getPageContent(): void {
     this.projects = this.projectService.getProjects();
-    this.categories = this.projectService.getCategories();
     this.tags = this.projectService.getTags();
+
+    this.projects.forEach((project) => {
+      project.tags = project.tag_ids.map((id) => {
+        return this.tags!.find((tag) => tag.id === id)!;
+      });
+    });
   }
 
   setTagFilter(tag: Tag) {
     this.tagFilter = tag;
   }
-  setCategoryFilter(category: Category) {
-    this.categoryFilter = category;
-  }
+
   clearFilters() {
-    this.categoryFilter = undefined;
     this.tagFilter = undefined;
   }
 
