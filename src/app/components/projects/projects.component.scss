@@ -2,18 +2,94 @@
 
 .projects-section {
   display: flex;
+  position: relative;
   gap: 20px;
   justify-content: center;
-  padding: $small-spacing;
+  padding: calc($small-spacing / 2) $small-spacing;
 }
 
-.sidebar {
-  width: 100px;
-  background-color: rgb(175, 241, 219);
-  border-radius: 25px;
+.filter-btn-section {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+}
+
+.filter-btn {
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    color: $on-hover-color;
+  }
+}
+.mobile-filter {
+  position: absolute;
+  display: block;
+  transform: translateX(-100%);
+  background-color: rgb(236, 236, 236);
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: all 0.5s;
+  opacity: 0;
+  width: 150px;
+  height: 100vh;
   padding: 20px;
+
+  &.open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  span {
+    padding-bottom: 5px;
+  }
+
+  .selected-filter {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+  }
+
+  .selected-filter-name {
+    cursor: pointer;
+
+    &:hover {
+      color: $on-hover-color;
+    }
+  }
+
+  li {
+    list-style: none;
+    padding-bottom: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: $on-hover-color;
+    }
+  }
+
+  li:not(.heading),
+  .selected-filter-name {
+    padding-left: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 20px;
+
+    &:hover {
+      color: $on-hover-color;
+    }
+  }
+}
+
+.desktop-filter {
+  width: 150px;
+  display: none;
+  flex-direction: column;
   margin: 0;
   height: fit-content;
 
@@ -27,8 +103,12 @@
     height: 50px;
   }
 
-  .trash-icon:hover {
-    color: $on-hover-color;
+  .selected-filter-name {
+    cursor: pointer;
+
+    &:hover {
+      color: $on-hover-color;
+    }
   }
 
   li {
@@ -47,6 +127,30 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .desktop-filter {
+    display: flex;
+  }
+  .mobile-filter {
+    display: none;
+  }
+  .filter-btn-section {
+    display: none;
+  }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 10px;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .project-grid {
   display: grid;
   position: relative;
@@ -58,7 +162,7 @@
 .grid-item {
   padding: 10px;
   margin-bottom: 25px;
-  width: 230px;
+  width: 220px;
   height: 430px;
   border: solid grey 1px;
   border-radius: 10px;
@@ -129,7 +233,7 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -145,7 +249,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 860px) {
   .project-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -159,7 +263,7 @@
   }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1200px) {
   .project-grid {
     grid-template-columns: repeat(4, 1fr);
   }

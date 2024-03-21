@@ -1,26 +1,46 @@
 <div class="projects-section">
-  <div class="sidebar" id="sidebar">
+  <div class="mobile-filter" [ngClass]="{'open': isMenuOpen}">
     <div class="selected-filter">
       <span class="heading">
-        <b>Selected</b>
+        <b>Selected Filter</b>
       </span>
-      <span class="selected-filter-name" *ngIf="tagFilter">
+      <span class="selected-filter-name" *ngIf="tagFilter" (click)="clearFilters()">
         {{tagFilter?.name}}
-        <i class="fa fa-trash-o trash-icon" (click)="clearFilters()"></i>
+        <i class="fa fa-trash-o trash-icon"></i>
       </span>
     </div>
-    <span class="heading"><b>Tags</b></span>
+    <span class="heading"><b>Filters</b></span>
     <li *ngFor="let tag of tags" (click)="setTagFilter(tag)">{{tag.name}}</li>
   </div>
-  <div class="project-grid">
-    <div class="grid-item" *ngFor="let project of projects"
-      [class.hidden]="tagFilter && !project.tag_ids.includes(tagFilter.id)">
-      <div class="img-container" (click)="redirectToDetailPage(project.id)">
-        <img [src]="project.snapshotImgPaths[0]" (mouseover)="shiftImage($event)" (mouseout)="unShiftImage($event)" />
+  <div class="desktop-filter">
+    <div class="selected-filter">
+      <span class="heading">
+        <b>Selected Filter</b>
+      </span>
+      <span class="selected-filter-name" *ngIf="tagFilter" (click)="clearFilters()">
+        {{tagFilter?.name}}
+        <i class="fa fa-trash-o trash-icon"></i>
+      </span>
+    </div>
+    <span class="heading"><b>Filters</b></span>
+    <li *ngFor="let tag of tags" (click)="setTagFilter(tag)">{{tag.name}}</li>
+  </div>
+  <div class="flex-column">
+    <div class="filter-btn-section">
+      <div class="filter-btn" (click)="toggleMenu()">Filters <i class="fa fa-solid fa-sliders filter-icon"></i></div>
+      <span *ngIf="tagFilter">{{tagFilter?.name}}</span>
+    </div>
+    <div class="project-grid">
+      <div class="grid-item" *ngFor="let project of projects"
+        [class.hidden]="tagFilter && !project.tag_ids.includes(tagFilter.id)">
+        <div class="img-container" (click)="redirectToDetailPage(project.id)">
+          <img [src]="project.snapshotImgPaths[0]" (mouseover)="shiftImage($event)" (mouseout)="unShiftImage($event)" />
+        </div>
+        <h1>{{project.name}}</h1>
+        <p>{{project.shortDescription}}</p>
+        <span class="tag" *ngFor="let tag of project.tags">{{tag.name}}</span>
       </div>
-      <h1>{{project.name}}</h1>
-      <p>{{project.shortDescription}}</p>
-      <span class="tag" *ngFor="let tag of project.tags">{{tag.name}}</span>
     </div>
   </div>
+
 </div>

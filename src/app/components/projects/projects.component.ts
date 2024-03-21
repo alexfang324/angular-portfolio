@@ -16,6 +16,7 @@ export class ProjectsComponent {
   projects?: Project[];
   tags?: Tag[];
   tagFilter: Tag | undefined;
+  isMenuOpen: boolean = false;
 
   constructor(
     private projectService: ProjectService,
@@ -39,10 +40,19 @@ export class ProjectsComponent {
 
   setTagFilter(tag: Tag) {
     this.tagFilter = tag;
+    this.isMenuOpen = false;
   }
 
   clearFilters() {
     this.tagFilter = undefined;
+    this.isMenuOpen = false;
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+  closeMenu() {
+    this.isMenuOpen = false;
   }
 
   shiftImage(event: MouseEvent): void {

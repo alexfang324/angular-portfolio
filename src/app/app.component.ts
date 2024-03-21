@@ -25,7 +25,6 @@ import { RouterService } from './services/router.service';
 })
 export class AppComponent {
   isMenuOpen: boolean = false;
-  screenWidth: number = 0;
 
   constructor(private router: Router, private routerService: RouterService) {}
 
@@ -41,13 +40,6 @@ export class AppComponent {
           this.showLoadingPage();
         }
       });
-
-    this.getScreenSize();
-  }
-
-  @HostListener('window:resize', ['$event'])
-  getScreenSize() {
-    this.screenWidth = window.innerWidth;
   }
 
   toggleMenu() {
@@ -58,10 +50,10 @@ export class AppComponent {
   }
 
   showLoadingPage(): void {
-    // this.loadScreenElement.nativeElement.classList.add('active');
-    // setTimeout(() => {
-    //   this.loadScreenElement.nativeElement.classList.remove('active');
-    // }, 3000);
+    this.loadScreenElement.nativeElement.classList.add('active');
+    setTimeout(() => {
+      this.loadScreenElement.nativeElement.classList.remove('active');
+    }, 3000);
   }
 
   redirectToHomePage(): void {

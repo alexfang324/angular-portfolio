@@ -18,15 +18,23 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error perferendis blanditiis aspernatur
                 repudiandae est illum eveniet distinctio consectetur qui sunt ex minus praesentium ea temporibus,
                 deleniti possimus laborum esse? Aut.</p>
-            <button (click)="navigateToAboutPage()">Read More</button>
+            <button (click)="navigateToPage('/about-me')">Read More</button>
         </div>
     </div>
 </div>
 
-<div class="carousel">
-    <div class="tile" *ngFor="let tile of tiles">
-        <img [src]="tile.src" [alt]="tile.alt">
+<div class="project-section">
+    <h1>Featured Projects</h1>
+    <div class="projects">
+        <div class="img-container">
+            <img src="assets/images/aboutme2.png" (click)="navigateToPage('/projects/audioengine')" />
+        </div>
+        <div class="img-container">
+            <img src="assets/images/aboutme2.png" (click)="navigateToPage('/projects/audioengine')" />
+        </div>
+        <div class="img-container">
+            <img src="assets/images/aboutme2.png" (click)="navigateToPage('/projects/audioengine')" />
+        </div>
     </div>
-    <button class="arrow left-arrow" (click)="moveLeft()">&lt;</button>
-    <button class="arrow right-arrow" (click)="moveRight()">&gt;</button>
+    <button (click)="navigateToPage('/projects')">Learn More</button>
 </div>

@@ -123,47 +123,44 @@
   }
 }
 
-// =========================================
-.carousel {
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  margin: auto;
-}
-
-.tile {
-  flex: 0 0 30%; /* Set initial width for tiles */
-  height: 200px;
-  border: 1px solid #ccc;
+.project-section {
   text-align: center;
-  transition: transform 0.5s ease;
+  margin-bottom: 50px;
+
+  .projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .img-container {
+    width: 25%;
+    max-width: 250px;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+  }
 
   img {
-    width: 200px;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  h1 {
+    font-size: 25px;
   }
 }
 
-.center-tile {
-  transform: scale(1.1); /* Make center tile slightly larger */
-  z-index: 2; /* Bring center tile to the front */
-}
-
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-}
-
-.left-arrow {
-  left: -10px;
-}
-
-.right-arrow {
-  right: -10px;
+@media (min-width: 600px) {
+  .project-section {
+    h1 {
+      font-size: 35px;
+    }
+  }
 }
