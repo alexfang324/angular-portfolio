@@ -25,15 +25,17 @@
 
 <div class="project-section">
     <h1>Featured Projects</h1>
-    <div class="projects">
-        <div class="img-container">
-            <img src="assets/images/aboutme2.png" (click)="navigateToPage('/projects/audioengine')" />
-        </div>
-        <div class="img-container">
-            <img src="assets/images/aboutme2.png" (click)="navigateToPage('/projects/audioengine')" />
-        </div>
-        <div class="img-container">
-            <img src="assets/images/aboutme2.png" (click)="navigateToPage('/projects/audioengine')" />
+    <div class="carousel_wrapper">
+        <div class=" carousel">
+            <div class="slide one">
+                <img src="assets/images/aboutme2.png" (click)="navigateToPage('/projects/audioengine')" />
+            </div>
+            <div class="slide two">
+                <img src="assets/images/aboutme2.png" (click)="navigateToPage('/projects/audioengine')" />
+            </div>
+            <div class="slide three">
+                <img src="assets/images/aboutme2.png" (click)="navigateToPage('/projects/audioengine')" />
+            </div>
         </div>
     </div>
     <button (click)="navigateToPage('/projects')">Learn More</button>
