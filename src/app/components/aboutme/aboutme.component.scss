@@ -257,7 +257,7 @@
 //children elements can be set by using the fade-in-after-x class
 .fade-in-parent {
   animation: fade-in 3s forwards;
-  animation-delay: 0.5s;
+  animation-delay: 0.2s;
 }
 
 @for $i from 1 through 10 {

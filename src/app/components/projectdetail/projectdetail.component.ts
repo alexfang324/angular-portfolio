@@ -3,6 +3,8 @@ import { CommonModule, Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../models/project';
+import { Tag } from '../../models/tag';
+import { Category } from '../../models/category';
 
 @Component({
   selector: 'app-projectdetail',
@@ -19,6 +21,8 @@ export class ProjectdetailComponent {
   ) {}
 
   project?: Project;
+  categories?: Category[];
+  tags?: Tag[];
   observer?: IntersectionObserver;
 
   getProject(): void {
@@ -28,6 +32,17 @@ export class ProjectdetailComponent {
 
   ngOnInit(): void {
     this.getProject();
+    this.tags = this.projectService.getTags();
+    this.categories = this.projectService.getCategories();
+
+    //convert project category and tag ids into objects
+    this.project!.tags = this.project!.tag_ids.map((id) => {
+      return this.tags!.find((tag) => tag.id === id)!;
+    });
+
+    this.project!.categories = this.project!.category_ids.map((id) => {
+      return this.categories!.find((category) => category.id === id)!;
+    });
 
     //use javascript to compute and add the actual width of a width:100% container
     //as a css customer property for css calculation

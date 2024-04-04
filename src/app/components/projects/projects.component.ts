@@ -4,6 +4,7 @@ import { RouterService } from '../../services/router.service';
 import { Project } from '../../models/project';
 import { CommonModule } from '@angular/common';
 import { Tag } from '../../models/tag';
+import { Category } from '../../models/category';
 
 @Component({
   selector: 'app-projects',
@@ -14,7 +15,9 @@ import { Tag } from '../../models/tag';
 })
 export class ProjectsComponent {
   projects?: Project[];
+  categories?: Category[];
   tags?: Tag[];
+  categoryFilter: Category | undefined;
   tagFilter: Tag | undefined;
   isMenuOpen: boolean = false;
 
@@ -27,15 +30,25 @@ export class ProjectsComponent {
     this.getPageContent();
   }
 
+  //convert tag and categories id into actual objects and add to each project object
   getPageContent(): void {
     this.projects = this.projectService.getProjects();
     this.tags = this.projectService.getTags();
+    this.categories = this.projectService.getCategories();
 
     this.projects.forEach((project) => {
       project.tags = project.tag_ids.map((id) => {
         return this.tags!.find((tag) => tag.id === id)!;
       });
+
+      project.categories = project.category_ids.map((id) => {
+        return this.categories!.find((category) => category.id === id)!;
+      });
     });
+  }
+
+  setCategoryFilter(category: Category) {
+    this.categoryFilter = category;
   }
 
   setTagFilter(tag: Tag) {
@@ -45,6 +58,7 @@ export class ProjectsComponent {
 
   clearFilters() {
     this.tagFilter = undefined;
+    this.categoryFilter = undefined;
     this.isMenuOpen = false;
   }
 

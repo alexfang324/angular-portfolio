@@ -46,7 +46,7 @@ $header-height: 200px;
 .slider-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 9 /12;
   overflow: hidden;
   border: solid 1px black;
   margin: 0 auto;
@@ -57,7 +57,7 @@ $header-height: 200px;
     .slider-img {
       //the slider-container-width property is calculated using javascript
       transform: translateY(
-        calc(-100% + var(--slider-container-width) / 9 * 16)
+        calc(-100% + var(--slider-container-width) / 9 * 12)
       );
     }
 
@@ -153,12 +153,6 @@ $header-height: 200px;
   .slider-container {
     width: 50%;
     min-width: 50%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .tech-content {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 

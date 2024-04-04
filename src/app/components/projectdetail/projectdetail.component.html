@@ -5,7 +5,7 @@
 <div class="detail-section">
   <div class="main-section">
     <div id="slider-container" class="slider-container">
-      <img class="slider-img" [src]="project?.imgPath" />
+      <img class="slider-img" [src]="project?.sliderImgPath" />
       <div class="hover-text">Hover Me</div>
     </div>
     <div>
@@ -17,15 +17,15 @@
     <h1>About this project</h1>
     <div class="tech-content">
       <div>
-        <h2>Categories</h2>
+        <h2>Themes</h2>
         <ul class="tech-list">
-          <li *ngFor="let category of project?.category_ids">{{category}}</li>
+          <li *ngFor="let category of project?.categories">{{category.name}}</li>
         </ul>
       </div>
       <div>
         <h2>Technologies</h2>
         <ul class="tech-list">
-          <li *ngFor="let tag of project?.tag_ids">{{tag}}</li>
+          <li *ngFor="let tag of project?.tags">{{tag.name}}</li>
         </ul>
       </div>
       <div>

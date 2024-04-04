@@ -212,21 +212,19 @@ main.nav-open {
 }
 
 #load-screen {
-  display: none;
+  display: block;
   position: absolute;
   align-content: center;
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 1000;
   background-color: lightgray;
-}
-#load-screen.active {
-  display: block;
 }
 
 .logo {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

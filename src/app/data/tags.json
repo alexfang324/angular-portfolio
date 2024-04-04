@@ -1,7 +1,17 @@
 [
-  { "id": 1, "name": "JavaScript", "slug": "javacript" },
-  { "id": 2, "name": "CSS", "slug": "css" },
-  { "id": 3, "name": "React", "slug": "react" },
-  { "id": 4, "name": "Saas", "slug": "saas" },
-  { "id": 5, "name": "C#", "slug": "csharp" }
+  { "id": 1, "name": "Angular", "slug": "angular" },
+  { "id": 2, "name": "AWS", "slug": "aws" },
+  { "id": 3, "name": "C# (ASP Core)", "slug": "csharp" },
+  { "id": 4, "name": "CSS", "slug": "css" },
+  { "id": 5, "name": "Docker", "slug": "docker" },
+  { "id": 6, "name": "EJS", "slug": "csharp" },
+  { "id": 7, "name": "JavaScript", "slug": "javacript" },
+  { "id": 8, "name": "Kubernetes", "slug": "kubernetes" },
+  { "id": 9, "name": "Node.js", "slug": "nodejs" },
+  { "id": 10, "name": "React", "slug": "react" },
+  { "id": 11, "name": "Redux", "slug": "redux" },
+  { "id": 12, "name": "SASS", "slug": "saas" },
+  { "id": 13, "name": "SQL", "slug": "sql" },
+  { "id": 14, "name": "TypeScript", "slug": "typescript" },
+  { "id": 15, "name": "Vue", "slug": "vue" }
 ]

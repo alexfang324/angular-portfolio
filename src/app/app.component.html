@@ -6,7 +6,7 @@
       <ul>
         <li>
           <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page">Home</a>
+            ariaCurrentWhenActive="page" (click)="redirectToHomePage()">Home</a>
         </li>
         <li>
           <a routerLink="/about-me" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
@@ -42,12 +42,12 @@
     </div>
   </div>
 </nav>
-<main [class]="isMenuOpen?'nav-open':''">
+<main *ngIf="!showLoadScreen" [class]="isMenuOpen?'nav-open':''">
   <router-outlet></router-outlet>
 </main>
 
 
-<div #loadScreen id="load-screen">
+<div *ngIf="showLoadScreen" id="load-screen">
   <div class="logo">
     <div class="line hexagon hex-line1"></div>
     <div class="line hexagon hex-line2"></div>

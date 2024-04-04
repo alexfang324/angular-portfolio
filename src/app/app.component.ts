@@ -25,10 +25,9 @@ import { RouterService } from './services/router.service';
 })
 export class AppComponent {
   isMenuOpen: boolean = false;
+  showLoadScreen: boolean = false;
 
   constructor(private router: Router, private routerService: RouterService) {}
-
-  @ViewChild('loadScreen') loadScreenElement!: ElementRef<HTMLDivElement>;
 
   ngAfterViewInit(): void {
     //check for navigation events and if it's one that goes to or redirects to
@@ -50,13 +49,14 @@ export class AppComponent {
   }
 
   showLoadingPage(): void {
-    this.loadScreenElement.nativeElement.classList.add('active');
+    this.showLoadScreen = true;
     setTimeout(() => {
-      this.loadScreenElement.nativeElement.classList.remove('active');
-    }, 3000);
+      this.showLoadScreen = false;
+    }, 2600);
   }
 
   redirectToHomePage(): void {
     this.routerService.redirectToHomePage();
+    this.showLoadingPage();
   }
 }
