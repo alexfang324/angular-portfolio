@@ -16,19 +16,19 @@
   <div class="tech-section">
     <h1>About this project</h1>
     <div class="tech-content">
-      <div>
+      <div class=" grid-item">
         <h2>Themes</h2>
         <ul class="tech-list">
-          <li *ngFor="let category of project?.categories">{{category.name}}</li>
+          <li *ngFor="let theme of project?.themes">{{theme.name}}</li>
         </ul>
       </div>
-      <div>
+      <div class=" grid-item">
         <h2>Technologies</h2>
         <ul class="tech-list">
           <li *ngFor="let tag of project?.tags">{{tag.name}}</li>
         </ul>
       </div>
-      <div>
+      <div class=" grid-item">
         <h2>Hightlights</h2>
         <ul class="highlight-list">
           <li *ngFor="let highlight of project?.highlights">{{highlight}}</li>
@@ -38,5 +38,8 @@
   </div>
 </div>
 <div class="snapshot-section">
-  <img *ngFor="let imgPath of project?.snapshotImgPaths" [src]="imgPath" />
+  <h1>Closer Look</h1>
+  <div class="snapshots">
+    <img *ngFor="let imgPath of project?.snapshotImgPaths" [src]="imgPath" />
+  </div>
 </div>

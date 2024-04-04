@@ -1,9 +1,7 @@
 [
-  { "id": 1, "name": "Front End", "slug": "frontend" },
-  { "id": 2, "name": "Back End", "slug": "backend" },
-  { "id": 3, "name": "Full Stack", "slug": "fullstack" },
-  { "id": 4, "name": "Team Project", "slug": "teamwork" },
-  { "id": 5, "name": "Indiv. Project", "slug": "individual" },
-  { "id": 6, "name": "UX/UI Focused", "slug": "uxui" },
-  { "id": 7, "name": "Logic and Structure", "slug": "logic" }
+  { "id": 1, "name": "Language", "slug": "language" },
+  { "id": 2, "name": "Framework/Library", "slug": "framework" },
+  { "id": 3, "name": "Database", "slug": "database" },
+  { "id": 4, "name": "Cloud", "slug": "cloud" },
+  { "id": 5, "name": "Other", "slug": "individual" }
 ]

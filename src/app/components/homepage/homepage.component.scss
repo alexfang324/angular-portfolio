@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 .landing-cover {
   width: 100%;
   aspect-ratio: 2 / 1;
@@ -174,7 +176,8 @@
     height: 200px;
     width: 300px;
     overflow: hidden;
-    border: 3px inset rgba(47, 115, 201, 0.75);
+    border: 3px inset lightsalmon;
+    border-radius: 10px;
 
     &:hover {
       cursor: pointer;

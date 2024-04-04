@@ -23,6 +23,15 @@
     color: $on-hover-color;
   }
 }
+
+.selected-filter-name {
+  cursor: pointer;
+
+  &:hover {
+    color: $on-hover-color;
+  }
+}
+
 .mobile-filter {
   position: absolute;
   display: block;
@@ -34,7 +43,7 @@
   transition: all 0.5s;
   opacity: 0;
   width: 150px;
-  height: 100vh;
+  height: 100%;
   padding: 20px;
 
   &.open {
@@ -42,22 +51,14 @@
     opacity: 1;
   }
 
-  span {
-    padding-bottom: 5px;
+  .cat-block {
+    margin-top: 10px;
   }
 
   .selected-filter {
     display: flex;
     flex-direction: column;
     height: 50px;
-  }
-
-  .selected-filter-name {
-    cursor: pointer;
-
-    &:hover {
-      color: $on-hover-color;
-    }
   }
 
   li {
@@ -93,8 +94,8 @@
   margin: 0;
   height: fit-content;
 
-  span {
-    padding-bottom: 5px;
+  .cat-block {
+    margin-top: 10px;
   }
 
   .selected-filter {

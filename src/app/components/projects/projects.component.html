@@ -4,15 +4,18 @@
       <span class="heading">
         <b>Selected Filter</b>
       </span>
-      <span class="selected-filter-name" *ngIf="categoryFilter ||tagFilter" (click)="clearFilters()">
-        {{categoryFilter? categoryFilter.name:tagFilter?.name}}
+      <span class="selected-filter-name" *ngIf="tagFilter" (click)="clearFilters()">
+        {{tagFilter.name}}
         <i class="fa fa-trash-o trash-icon"></i>
       </span>
     </div>
-    <li class="heading"><b>Themes</b></li>
-    <li *ngFor="let category of categories" (click)="setCategoryFilter(category)">{{category.name}}</li>
-    <span class="heading"><b>Techs</b></span>
-    <li *ngFor="let tag of tags" (click)="setTagFilter(tag)">{{tag.name}}</li>
+    <div *ngFor="let category of categories" class="cat-block">
+      <span class="heading"><b>{{category.name}}</b></span>
+      <ng-container *ngFor="let tag of tags">
+        <li *ngIf="tag.category?.name === category.name" (click)="setTagFilter(tag)">{{tag.name}}</li>
+      </ng-container>
+    </div>
+
   </div>
   <div class="desktop-filter">
     <div class="selected-filter">
@@ -24,23 +27,27 @@
         <i class="fa fa-trash-o trash-icon"></i>
       </span>
     </div>
-    <span class="heading"><b>Filters</b></span>
-    <li *ngFor="let tag of tags" (click)="setTagFilter(tag)">{{tag.name}}</li>
+    <div *ngFor="let category of categories" class="cat-block">
+      <span class="heading"><b>{{category.name}}</b></span>
+      <ng-container *ngFor="let tag of tags">
+        <li *ngIf="tag.category?.name === category.name" (click)="setTagFilter(tag)">{{tag.name}}</li>
+      </ng-container>
+    </div>
   </div>
   <div class="flex-column">
     <div class="filter-btn-section">
       <div class="filter-btn" (click)="toggleMenu()">Filters <i class="fa fa-solid fa-sliders filter-icon"></i></div>
-      <span *ngIf="tagFilter">{{tagFilter.name}}</span>
+      <span *ngIf="tagFilter" (click)="clearFilters()" class="selected-filter-name">{{tagFilter.name}} <i
+          class="fa fa-trash-o trash-icon"></i></span>
     </div>
     <div class="project-grid">
       <div class="grid-item" *ngFor="let project of projects"
-        [class.hidden]="(categoryFilter && !project.category_ids.includes(categoryFilter.id)) || (tagFilter && !project.tag_ids.includes(tagFilter.id))">
+        [class.hidden]="(tagFilter && !project.tag_ids.includes(tagFilter.id))">
         <div class="img-container" (click)="redirectToDetailPage(project.id)">
           <img [src]="project.mainImgPath" (mouseover)="shiftImage($event)" (mouseout)="unShiftImage($event)" />
         </div>
         <h1>{{project.name}}</h1>
         <p>{{project.shortDescription}}</p>
-        <!-- <span class="category" *ngFor="let category of project.categories">{{category.name}}</span> -->
         <span class="tag" *ngFor="let tag of project.tags">{{tag.name}}</span>
       </div>
     </div>

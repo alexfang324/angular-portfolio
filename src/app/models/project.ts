@@ -1,5 +1,6 @@
 import { Category } from './category';
 import { Tag } from './tag';
+import { Theme } from './theme';
 export interface Project {
   id: string;
   name: string;
@@ -8,8 +9,8 @@ export interface Project {
   snapshotImgPaths: string[];
   shortDescription: string;
   longDescription: string;
-  category_ids: number[];
-  categories?: Category[];
+  theme_ids: number[];
+  themes?: Theme[];
   tag_ids: number[];
   tags?: Tag[];
   highlights: string[];

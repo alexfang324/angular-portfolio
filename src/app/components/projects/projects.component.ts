@@ -17,7 +17,6 @@ export class ProjectsComponent {
   projects?: Project[];
   categories?: Category[];
   tags?: Tag[];
-  categoryFilter: Category | undefined;
   tagFilter: Tag | undefined;
   isMenuOpen: boolean = false;
 
@@ -33,22 +32,22 @@ export class ProjectsComponent {
   //convert tag and categories id into actual objects and add to each project object
   getPageContent(): void {
     this.projects = this.projectService.getProjects();
-    this.tags = this.projectService.getTags();
     this.categories = this.projectService.getCategories();
+    this.tags = this.projectService.getTags();
 
+    //get the associate category object for each tag
+    this.tags.forEach((tag) => {
+      tag.category = this.categories!.find(
+        (category) => category.id === tag.category_id
+      )!;
+    });
+
+    //get the associated tag object for each project
     this.projects.forEach((project) => {
       project.tags = project.tag_ids.map((id) => {
         return this.tags!.find((tag) => tag.id === id)!;
       });
-
-      project.categories = project.category_ids.map((id) => {
-        return this.categories!.find((category) => category.id === id)!;
-      });
     });
-  }
-
-  setCategoryFilter(category: Category) {
-    this.categoryFilter = category;
   }
 
   setTagFilter(tag: Tag) {
@@ -58,7 +57,6 @@ export class ProjectsComponent {
 
   clearFilters() {
     this.tagFilter = undefined;
-    this.categoryFilter = undefined;
     this.isMenuOpen = false;
   }
 

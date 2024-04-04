@@ -5,6 +5,7 @@ import { ProjectService } from '../../services/project.service';
 import { Project } from '../../models/project';
 import { Tag } from '../../models/tag';
 import { Category } from '../../models/category';
+import { Theme } from '../../models/theme';
 
 @Component({
   selector: 'app-projectdetail',
@@ -21,27 +22,33 @@ export class ProjectdetailComponent {
   ) {}
 
   project?: Project;
+  themes?: Theme[];
   categories?: Category[];
   tags?: Tag[];
   observer?: IntersectionObserver;
 
-  getProject(): void {
+  ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.project = this.projectService.getProject(id!);
-  }
-
-  ngOnInit(): void {
-    this.getProject();
+    this.themes = this.projectService.getThemes();
     this.tags = this.projectService.getTags();
     this.categories = this.projectService.getCategories();
 
-    //convert project category and tag ids into objects
+    //get the associate category object for each tag
+    this.tags.forEach((tag) => {
+      tag.category = this.categories!.find(
+        (category) => category.id === tag.category_id
+      )!;
+    });
+
+    //convert project tag ids into tag objects
     this.project!.tags = this.project!.tag_ids.map((id) => {
       return this.tags!.find((tag) => tag.id === id)!;
     });
 
-    this.project!.categories = this.project!.category_ids.map((id) => {
-      return this.categories!.find((category) => category.id === id)!;
+    //convert project theme ids into theme objects
+    this.project!.themes = this.project!.theme_ids.map((id) => {
+      return this.themes!.find((theme) => theme.id === id)!;
     });
 
     //use javascript to compute and add the actual width of a width:100% container
