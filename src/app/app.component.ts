@@ -52,7 +52,7 @@ export class AppComponent {
     this.showLoadScreen = true;
     setTimeout(() => {
       this.showLoadScreen = false;
-    }, 2600);
+    }, 1500);
   }
 
   redirectToHomePage(): void {

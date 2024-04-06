@@ -15,22 +15,30 @@
 <div class="about-me-section">
     <div class="panel">
         <img src="assets/images/alex-fang.png" />
-        <div>
-            <h1>Modern Design Web Developer</h1>
-            <p>
-                Skilled Software Development Graduate with Proficiency in Modern Web Technologies and AWS Solutions.
-                Demonstrated aptitude in responsive web design, collaborative project execution, and innovative software
-                development.
-            </p>
+        <div class="about-me-text-block">
+            <div>
+                <h1>Modern Design Web Developer</h1>
+                <p>
+                    Skilled Software Development Graduate with Proficiency in Modern Web Technologies and AWS Solutions.
+                    Demonstrated aptitude in responsive web design, collaborative project execution, and innovative
+                    software
+                    development.
+                </p>
+            </div>
             <div class="social-media-row">
-                <div><i class="fa fa-brands fa-linkedin-square social-media-icon"></i> <a
-                        href="https://www.linkedin.com/in/ching-yang-alex-fang-67795686/" target="_blank">LinkedIn</a>
+                <div>
+                    <div><i class="fa fa-brands fa-linkedin-square social-media-icon"></i> <a
+                            href="https://www.linkedin.com/in/ching-yang-alex-fang-67795686/"
+                            target="_blank">LinkedIn</a>
+                    </div>
+                    <div><i class="fa fa-brands fa-github social-media-icon"></i> <a
+                            href="https://github.com/alexfang324" target="_blank">alexfang324</a></div>
+                    <div><i class="fa fa-solid fa-file social-media-icon"></i> <a href="https://github.com/alexfang324"
+                            target="_blank">Resume</a></div>
                 </div>
-                <div><i class="fa fa-brands fa-github social-media-icon"></i> <a href="https://github.com/alexfang324"
-                        target="_blank">alexfang324</a></div>
+                <button class="learn-more-btn" (click)="navigateToPage('/about-me')">Learn More</button>
             </div>
 
-            <button (click)="navigateToPage('/about-me')">Read More</button>
         </div>
     </div>
 </div>
@@ -39,26 +47,34 @@
     <h1>Featured Projects</h1>
     <div class="carousel_wrapper">
         <div class=" carousel">
-            <div class="slide one">
-                <img src="assets/images/nova-main.png" (click)="navigateToPage('/projects/nova')" />
-                <div>
+            <div class="slide one" (click)="navigateToPage('/projects/nova')">
+                <img src="assets/images/nova-main.png" />
+                <div class="slide-overlay">
                     <span> ASP Core</span>
                     <p>A fullstack, stand alone website built using ASP Core with login, payment, fulfillment, and
                         review functionality</p>
                 </div>
             </div>
-            <div class="slide two">
-                <img src="assets/images/movie-homepage.png" (click)="navigateToPage('/projects/mvdb')" />
-                <div>
+            <div class="slide two" (click)="navigateToPage('/projects/mvdb')">
+                <img src="assets/images/movie-homepage.png" />
+                <div class="slide-overlay">
                     <span>React and Redux</span>
                     <p>A movie showcase website with real time data, immersive and thoughtful ui designs in React</p>
                 </div>
             </div>
-            <div class="slide three">
-                <img src="assets/images/profile-main.png" (click)="navigateToPage('/projects/angular-profile')" />
+            <div class="slide three" (click)="navigateToPage('/projects/angular-profile')">
+                <img src="assets/images/profile-main.png" />
+                <div class="slide-overlay">
+                    <span>Angular</span>
+                    <p>A responsive portfolio showcase with an artisitc touch</p>
+                </div>
             </div>
-            <div class="slide four">
-                <img src="assets/images/bike-main.png" (click)="navigateToPage('/projects/ray-bike-suppreme')" />
+            <div class="slide four" (click)="navigateToPage('/projects/ray-bike-suppreme')">
+                <img src="assets/images/bike-main.png" />
+                <div class="slide-overlay">
+                    <span>Vanilla Javascript</span>
+                    <p>A fun real-time game that explores the limit of class inheritence and abstraction</p>
+                </div>
             </div>
         </div>
     </div>
