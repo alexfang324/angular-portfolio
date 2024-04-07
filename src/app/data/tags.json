@@ -11,9 +11,8 @@
   { "id": 10, "name": "React", "slug": "react", "category_id": 2 },
   { "id": 11, "name": "Redux", "slug": "redux", "category_id": 5 },
   { "id": 12, "name": "SASS", "slug": "saas", "category_id": 5 },
-  { "id": 13, "name": "MySQL", "slug": "mysql", "category_id": 3 },
+  { "id": 13, "name": "ASP.NET", "slug": "aspnet", "category_id": 2 },
   { "id": 14, "name": "TypeScript", "slug": "typescript", "category_id": 1 },
-  { "id": 15, "name": "Vue", "slug": "vue", "category_id": 2 },
   { "id": 16, "name": "AzureDB", "slug": "azuredb", "category_id": 3 },
-  { "id": 13, "name": "MongoDB", "slug": "mongodb", "category_id": 3 }
+  { "id": 17, "name": "MongoDB", "slug": "mongodb", "category_id": 3 }
 ]

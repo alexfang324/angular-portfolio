@@ -38,7 +38,7 @@ nav {
   background-color: $theme-background-color;
 }
 
-#nav-icon {
+#hamburger-icon {
   display: none;
   width: 25px;
   height: 20px;
@@ -55,7 +55,7 @@ nav {
   cursor: pointer;
 }
 
-#nav-icon span {
+#hamburger-icon span {
   display: block;
   position: absolute;
   height: 3px;
@@ -74,40 +74,40 @@ nav {
   transition: 0.25s ease-in-out;
 }
 
-#nav-icon span:nth-child(1) {
+#hamburger-icon span:nth-child(1) {
   top: 0px;
 }
 
-#nav-icon span:nth-child(2),
-#nav-icon span:nth-child(3) {
+#hamburger-icon span:nth-child(2),
+#hamburger-icon span:nth-child(3) {
   top: 7px;
 }
 
-#nav-icon span:nth-child(4) {
+#hamburger-icon span:nth-child(4) {
   top: 14px;
 }
 
-#nav-icon.open span:nth-child(1) {
+#hamburger-icon.open span:nth-child(1) {
   top: 18px;
   width: 0%;
   left: 50%;
 }
 
-#nav-icon.open span:nth-child(2) {
+#hamburger-icon.open span:nth-child(2) {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-#nav-icon.open span:nth-child(3) {
+#hamburger-icon.open span:nth-child(3) {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
-#nav-icon.open span:nth-child(4) {
+#hamburger-icon.open span:nth-child(4) {
   top: 18px;
   width: 0%;
   left: 50%;
@@ -142,6 +142,7 @@ main {
 
 .mobile-nav {
   display: none;
+  height: 100%;
 
   ul {
     flex-direction: column;
@@ -149,7 +150,7 @@ main {
     top: $nav-height;
     left: 0;
     width: 200px;
-    height: 100vh;
+    height: 100%;
     transform: translateX(-100%);
     background-color: $theme-background-secondary-color;
     z-index: 100;
@@ -188,7 +189,7 @@ main {
 }
 
 @media (max-width: 900px) {
-  #nav-icon {
+  #hamburger-icon {
     display: block;
   }
   .mobile-nav {

@@ -18,30 +18,32 @@
         </li>
       </ul>
     </div>
-    <div class="mobile-nav">
-      <div id="nav-icon" [class]="isMenuOpen?'open':''" (click)="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul [ngClass]="{'open': isMenuOpen}">
-        <li>
-          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page" (click)="closeMenu()">Home</a>
-        </li>
-        <li>
-          <a routerLink="/about-me" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page" (click)="closeMenu()">About Me</a>
-        </li>
-        <li>
-          <a routerLink="/projects" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page" (click)="closeMenu()">Projects</a>
-        </li>
-      </ul>
+    <div id="hamburger-icon" [class]="isMenuOpen?'open':''" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
 </nav>
+
+<div class="mobile-nav">
+  <ul [ngClass]="{'open': isMenuOpen}">
+    <li>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page" (click)="closeMenu()">Home</a>
+    </li>
+    <li>
+      <a routerLink="/about-me" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page" (click)="closeMenu()">About Me</a>
+    </li>
+    <li>
+      <a routerLink="/projects" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page" (click)="closeMenu()">Projects</a>
+    </li>
+  </ul>
+</div>
+
 <main *ngIf="!showLoadScreen" [class]="isMenuOpen?'nav-open':''">
   <router-outlet></router-outlet>
 </main>
