@@ -3,11 +3,15 @@ $small-spacing: 35px;
 $medium-spacing: 50px;
 $large-spacing: 100px;
 $max-page-width: 1440px;
-$on-hover-color: #bf7497;
+$on-hover-color: #b3907a;
 $theme-background-color: #f7f4f0;
 $theme-background-secondary-color: #d9dacc;
+$theme-third-color: #efe7da;
+$font-family-secondary: "Montserrat";
+$font-family-primary: "Playfair Display";
 
 body {
   margin: 0 auto;
-  font-family: "Encode Sans Condensed", sans-serif;
+  height: 100%;
+  font-family: $font-family-secondary, sans-serif;
 }

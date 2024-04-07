@@ -3,9 +3,11 @@
 .projects-section {
   display: flex;
   position: relative;
-  gap: 20px;
+  gap: 50px;
   justify-content: center;
   padding: calc($small-spacing / 2) $small-spacing;
+  padding-bottom: 50px;
+  background-color: $theme-background-color;
 }
 
 .filter-btn-section {
@@ -36,7 +38,7 @@
   position: absolute;
   display: block;
   transform: translateX(-100%);
-  background-color: rgb(236, 236, 236);
+  background-color: rgba($theme-background-secondary-color, 0.85);
   top: 0;
   left: 0;
   z-index: 100;
@@ -61,19 +63,20 @@
     height: 50px;
   }
 
+  .heading {
+    line-height: 35px;
+    font-size: 14px;
+  }
+
   li {
     list-style: none;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    font-size: 14px;
     cursor: pointer;
 
     &:hover {
       color: $on-hover-color;
     }
-  }
-
-  li:not(.heading),
-  .selected-filter-name {
-    padding-left: 20px;
   }
 
   a {
@@ -112,19 +115,20 @@
     }
   }
 
+  .heading {
+    line-height: 35px;
+    font-size: 14px;
+  }
+
   li {
     list-style: none;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    font-size: 14px;
     cursor: pointer;
 
     &:hover {
       color: $on-hover-color;
     }
-  }
-
-  li:not(.heading),
-  .selected-filter-name {
-    margin-left: 20px;
   }
 }
 
@@ -163,8 +167,8 @@
 .grid-item {
   padding: 10px;
   margin-bottom: 25px;
-  width: 220px;
-  height: 430px;
+  width: 210px;
+  height: 450px;
   border: solid grey 1px;
   border-radius: 10px;
 
@@ -181,20 +185,28 @@
   p {
     text-align: center;
     margin: 10px 0;
+  }
+
+  h1 {
+    font-size: 20px;
     white-space: nowrap; /* Prevent text from wrapping */
+    font-family: $font-family-primary;
     overflow: hidden; /* Hide overflowing text */
     text-overflow: ellipsis;
   }
 
-  h1 {
-    font-size: 25px;
+  p {
+    font-family: $font-family-secondary;
+    font-size: 12px;
+    line-height: 16px;
   }
+
   .category,
   .tag {
     display: inline-block;
     padding: 5px;
-    font-size: 12px;
-    background-color: bisque;
+    font-size: 10px;
+    background-color: $theme-background-secondary-color;
     border-radius: 10px;
     margin: 5px;
   }

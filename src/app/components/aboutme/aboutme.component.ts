@@ -36,7 +36,7 @@ export class AboutmeComponent {
           // targetElement!.classList.remove('fade-in-parent');
         });
       },
-      { threshold: 0.3 } // Set triggering threshold to 50% visibility element in view
+      { threshold: 0.3 } // Set triggering threshold to 30% visibility element in view
     );
 
     const elementsToObserve = document.querySelectorAll('.fade-in-element');

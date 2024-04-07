@@ -10,6 +10,7 @@
     width: 35%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
+    border-radius: 10px;
   }
 
   .left-img-container {
@@ -18,12 +19,12 @@
   }
 
   .right-img-container {
-    bottom: 0;
+    bottom: 3%;
     right: 0;
   }
 
   img {
-    height: 100%;
+    width: 100%;
     object-fit: cover;
   }
 }
@@ -46,12 +47,60 @@
   padding: 20px;
   z-index: 10;
 
-  h1 {
-    margin-top: 0;
-    font-size: 14px;
-  }
   p {
     font-size: 10px;
+  }
+}
+
+.heading-text {
+  margin-top: 0;
+  font-size: 14px;
+  font-family: $font-family-primary;
+}
+
+@media (min-width: 500px) {
+  .main-content {
+    p {
+      font-size: 12px;
+    }
+  }
+  .heading-text {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 600px) {
+  .main-content {
+    p {
+      font-size: 13px;
+    }
+  }
+  .heading-text {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    aspect-ratio: 1 / 1;
+    p {
+      font-size: 18px;
+    }
+  }
+  .heading-text {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    p {
+      font-size: 18px;
+      line-height: 25px;
+    }
+  }
+  .heading-text {
+    font-size: 32px;
   }
 }
 
@@ -84,12 +133,15 @@
   h1 {
     font-size: 14px;
     margin-top: 0;
+    font-family: $font-family-primary;
   }
   .social-media-row {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 25px;
+    align-items: flex-end;
+    gap: 5px;
+    width: 180px;
   }
 
   a {
@@ -98,26 +150,32 @@
   }
 
   .social-media-icon {
-    font-size: 15px;
-    margin-right: 15px;
+    font-size: 12px;
+    margin-right: 5px;
   }
 
-  .learn-more-btn {
-    display: inline-block;
-    width: 80px;
-    height: 20px;
-    border-radius: 3px;
-    border: none;
-    background-color: $theme-background-secondary-color;
-    font-size: 10px;
-  }
   p {
     font-size: 11px;
   }
 }
 
+.learn-more-btn {
+  display: inline-block;
+  width: 80px;
+  height: 20px;
+  border-radius: 3px;
+  border: none;
+  background-color: $theme-background-secondary-color;
+  font-size: 10px;
+  grid-column: span 2;
+
+  &:hover {
+    background-color: $on-hover-color;
+    cursor: pointer;
+  }
+}
+
 @media (min-width: 500px) {
-  .main-content,
   .about-me-section {
     h1 {
       font-size: 15px;
@@ -125,11 +183,24 @@
     p {
       font-size: 12px;
     }
+
+    .social-media-row {
+      width: 200px;
+    }
+
+    a {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    .social-media-icon {
+      font-size: 15px;
+      margin-right: 10px;
+    }
   }
 }
 
 @media (min-width: 600px) {
-  .main-content,
   .about-me-section {
     h1 {
       font-size: 19px;
@@ -138,39 +209,37 @@
       font-size: 13px;
     }
 
+    .social-media-row {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto 40px;
+    }
+
     a {
       font-size: 13px;
-      line-height: 25px;
     }
 
     .social-media-icon {
       font-size: 20px;
       margin-right: 15px;
     }
+  }
 
-    .learn-more-btn {
-      width: 100px;
-      height: 30px;
-      font-size: 12px;
-    }
+  .learn-more-btn {
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    grid-column: span 1;
   }
 }
 
 @media (min-width: 768px) {
   .about-me-section {
+    h1 {
+      font-size: 25px;
+    }
     p {
       font-size: 16px;
       line-height: 25px;
-    }
-  }
-
-  .main-content {
-    aspect-ratio: 1 / 1;
-    h1 {
-      font-size: 28px;
-    }
-    p {
-      font-size: 18px;
     }
   }
 }
@@ -179,24 +248,14 @@
   .about-me-section {
     padding: 50px 0;
   }
-
-  .main-content {
-    h1 {
-      font-size: 32px;
-    }
-    p {
-      font-size: 20px;
-    }
-  }
 }
 
 .project-section {
   text-align: center;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
   background-color: $theme-background-color;
 
   h1 {
-    font-size: 25px;
     margin: 0;
     padding: 20px 0;
   }
@@ -215,7 +274,7 @@
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transform: rotateY(-360deg) translateZ(-300px); /* add reverse transformation from the slides */
+    transform: rotateY(-360deg) translateZ(-100px); /* add reverse transformation from the slides */
     animation: swirl 30s steps(10000, end) infinite;
 
     &:hover {
@@ -227,8 +286,8 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    height: 200px;
-    width: 300px;
+    height: 100px;
+    width: 150px;
     overflow: hidden;
     border: 3px inset $theme-background-secondary-color;
     border-radius: 10px;
@@ -247,8 +306,9 @@
     background-color: lightgray;
     top: 0;
     left: 0;
-    height: 200px;
-    width: 300px;
+    height: 100px;
+    width: 150px;
+    font-size: 8px;
     flex-direction: column;
     justify-content: center;
   }
@@ -263,28 +323,20 @@
   }
 
   .slide.one {
-    transform: rotateY(0deg) translateZ(300px);
+    transform: rotateY(0deg) translateZ(100px);
   }
   .slide.two {
-    transform: rotateY(90deg) translateZ(300px);
+    transform: rotateY(90deg) translateZ(100px);
   }
   .slide.three {
-    transform: rotateY(180deg) translateZ(300px);
+    transform: rotateY(180deg) translateZ(100px);
   }
   .slide.four {
-    transform: rotateY(270deg) translateZ(300px);
+    transform: rotateY(270deg) translateZ(100px);
   }
 
   button {
-    margin-top: 320px;
-  }
-}
-
-@media (min-width: 600px) {
-  .project-section {
-    h1 {
-      font-size: 35px;
-    }
+    margin-top: 100px;
   }
 }
 
@@ -294,5 +346,69 @@
   }
   to {
     transform: rotateY(0deg);
+  }
+}
+
+@media (min-width: 600px) {
+  .project-section {
+    .carousel {
+      transform: rotateY(-360deg) translateZ(-225px); /* add reverse transformation from the slides */
+    }
+    .slide {
+      height: 150px;
+      width: 225px;
+    }
+    .slide-overlay {
+      height: 150px;
+      width: 225px;
+      font-size: 12px;
+    }
+    .slide.one {
+      transform: rotateY(0deg) translateZ(225px);
+    }
+    .slide.two {
+      transform: rotateY(90deg) translateZ(225px);
+    }
+    .slide.three {
+      transform: rotateY(180deg) translateZ(225px);
+    }
+    .slide.four {
+      transform: rotateY(270deg) translateZ(225px);
+    }
+    button {
+      margin-top: 200px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-section {
+    .carousel {
+      transform: rotateY(-360deg) translateZ(-300px); /* add reverse transformation from the slides */
+    }
+    .slide {
+      height: 200px;
+      width: 300px;
+    }
+    .slide-overlay {
+      height: 200px;
+      width: 300px;
+      font-size: 12px;
+    }
+    .slide.one {
+      transform: rotateY(0deg) translateZ(300px);
+    }
+    .slide.two {
+      transform: rotateY(90deg) translateZ(300px);
+    }
+    .slide.three {
+      transform: rotateY(180deg) translateZ(300px);
+    }
+    .slide.four {
+      transform: rotateY(270deg) translateZ(300px);
+    }
+    button {
+      margin-top: 320px;
+    }
   }
 }

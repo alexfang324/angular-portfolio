@@ -1,15 +1,15 @@
 <div class="landing-cover">
     <div class="img-container left-img-container">
-        <img src="assets/images/aboutme2.png" />
+        <img src="assets/images/landing-photo1.png" />
     </div>
     <div class="main-content">
-        <h1>Meet Alex</h1>
+        <h1 class="heading-text">Meet Alex</h1>
         <p>
             A self-driven individual dedicated to continuous growth who is equipped with a diverse array of talents
         </p>
     </div>
     <div class="img-container right-img-container">
-        <img src="assets/images/aboutme2.png" />
+        <img src="assets/images/landing-photo2.png" />
     </div>
 </div>
 <div class="about-me-section">
@@ -26,16 +26,13 @@
                 </p>
             </div>
             <div class="social-media-row">
-                <div>
-                    <div><i class="fa fa-brands fa-linkedin-square social-media-icon"></i> <a
-                            href="https://www.linkedin.com/in/ching-yang-alex-fang-67795686/"
-                            target="_blank">LinkedIn</a>
-                    </div>
-                    <div><i class="fa fa-brands fa-github social-media-icon"></i> <a
-                            href="https://github.com/alexfang324" target="_blank">alexfang324</a></div>
-                    <div><i class="fa fa-solid fa-file social-media-icon"></i> <a href="https://github.com/alexfang324"
-                            target="_blank">Resume</a></div>
+                <div><i class="fa fa-brands fa-linkedin-square social-media-icon"></i> <a
+                        href="https://www.linkedin.com/in/ching-yang-alex-fang-67795686/" target="_blank">LinkedIn</a>
                 </div>
+                <div><i class="fa fa-brands fa-github social-media-icon"></i> <a href="https://github.com/alexfang324"
+                        target="_blank">alexfang324</a></div>
+                <div><i class="fa fa-solid fa-file social-media-icon"></i> <a href="https://github.com/alexfang324"
+                        target="_blank">Resume</a></div>
                 <button class="learn-more-btn" (click)="navigateToPage('/about-me')">Learn More</button>
             </div>
 
@@ -44,7 +41,7 @@
 </div>
 
 <div class="project-section">
-    <h1>Featured Projects</h1>
+    <h1 class="heading-text">Featured Projects</h1>
     <div class="carousel_wrapper">
         <div class=" carousel">
             <div class="slide one" (click)="navigateToPage('/projects/nova')">
@@ -78,5 +75,5 @@
             </div>
         </div>
     </div>
-    <button (click)="navigateToPage('/projects')">Learn More</button>
+    <button class="learn-more-btn" (click)="navigateToPage('/projects')">Learn More</button>
 </div>

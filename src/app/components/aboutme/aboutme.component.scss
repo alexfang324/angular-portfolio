@@ -2,8 +2,20 @@
 
 .narrative {
   box-sizing: border-box;
-  font-size: 30px;
-  margin: 20px 5%;
+  font-family: $font-family-primary;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.small-narrative {
+  font-size: 19px;
+  box-sizing: border-box;
+  font-family: $font-family-secondary;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .gradient-overlay {
@@ -21,7 +33,10 @@
 }
 
 .about-me-section {
-  margin: auto $small-spacing;
+  padding-left: $small-spacing;
+  padding-right: $small-spacing;
+  padding-bottom: 50px;
+  background-color: $theme-background-color;
 }
 
 .section {
@@ -36,11 +51,23 @@
     gap: 10px;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
   }
 
   h1 {
     margin: 0;
+    font-family: $font-family-primary;
+    font-style: italic;
+    font-size: 20px;
+  }
+
+  h2 {
+    display: inline-block;
+    margin: 0;
+    margin-top: 20px;
+    font-weight: 400;
+    font-family: $font-family-primary;
+    font-size: 18px;
   }
 
   .image-container {
@@ -66,15 +93,15 @@
       padding-left: 1em;
       margin-bottom: 0;
     }
+    li {
+      font-size: 14px;
+      line-height: 20px;
+    }
 
     p {
       margin-bottom: 0;
-    }
-
-    h2 {
-      display: inline-block;
-      margin: 0;
-      margin-top: 20px;
+      font-size: 14px;
+      line-height: 20px;
     }
 
     b {
@@ -88,16 +115,21 @@
 
 @media (min-width: 768px) {
   .narrative {
-    font-size: 50px;
+    font-size: 25px;
   }
-
   .about-me-section {
-    margin: auto $medium-spacing;
+    padding-left: $medium-spacing;
+    padding-right: $medium-spacing;
   }
 
   .section {
     .section-wrapper {
       padding: $small-spacing;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 20px;
     }
 
     .image-container {
@@ -105,19 +137,44 @@
         margin-top: -10%;
       }
     }
+
+    .sub-section {
+      li {
+        line-height: 25px;
+      }
+
+      p {
+        line-height: 25px;
+      }
+    }
   }
 }
 
 @media (min-width: 1024px) {
   .about-me-section {
-    margin: auto $large-spacing;
+    padding-left: $medium-spacing;
+    padding-right: $medium-spacing;
   }
 
   .section {
     .section-wrapper {
       flex-direction: row;
       gap: 20px;
-      padding: $small-spacing;
+      padding: $medium-spacing $small-spacing;
+    }
+
+    .sub-section {
+      h2 {
+        font-size: 24px;
+      }
+      li {
+        font-size: 16px;
+        line-height: 28px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 28px;
+      }
     }
 
     .image-container {
@@ -151,19 +208,22 @@
 }
 
 .researcher-section {
-  background-color: lightcoral;
+  background-color: $theme-background-secondary-color;
 }
 .enterpreneur-section {
-  background-color: lightsalmon;
+  background-color: $theme-third-color;
 }
 .process-section {
-  background-color: lightpink;
+  background-color: #b3907a78;
 }
 
 .summary-section {
+  padding-top: 30px;
+  margin: 0;
+
   table {
     opacity: 0;
-    margin: auto;
+    margin-top: 30px;
   }
 
   td {
@@ -183,16 +243,21 @@
   }
 
   .spacer {
-    width: 50px;
+    width: 70px;
     height: 100%;
-    font-size: 40px;
+    font-size: 20px;
+    color: gray;
+    font-family: $font-family-secondary;
     text-align: center;
+    line-height: 100%;
+    vertical-align: middle;
   }
 
   .image-container {
     width: 200px;
     height: 200px;
     overflow: hidden;
+    border-radius: 10px;
 
     img {
       height: 100%;
@@ -202,11 +267,14 @@
 
   h3 {
     font-size: 20px;
+    font-family: $font-family-primary;
+    font-style: italic;
     margin-top: 5px;
     margin-bottom: 0;
   }
   p {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 
@@ -230,6 +298,9 @@
     .spacer {
       height: 50px;
       width: 200px;
+      vertical-align: middle;
+      line-height: 50px;
+      text-align: center;
     }
   }
 }
@@ -245,9 +316,17 @@
     tr:not(:first-child) td {
       width: calc(100vw - 280px) !important;
     }
+
+    .spacer {
+      vertical-align: middle;
+    }
     .image-container {
       width: 150px;
       height: 150px;
+    }
+
+    p {
+      line-height: 16px;
     }
   }
 }

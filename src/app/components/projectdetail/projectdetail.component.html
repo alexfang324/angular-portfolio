@@ -9,7 +9,6 @@
       <div class="hover-text">Hover Me</div>
     </div>
     <div>
-      <h1>{{project?.name}}</h1>
       <p>{{project?.longDescription}}</p>
     </div>
   </div>
@@ -38,7 +37,7 @@
   </div>
 </div>
 <div class="snapshot-section">
-  <h1>Closer Look</h1>
+  <h1>A Closer Look</h1>
   <div class="snapshots">
     <img *ngFor="let imgPath of project?.snapshotImgPaths" [src]="imgPath" />
   </div>
