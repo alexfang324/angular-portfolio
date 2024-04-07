@@ -1,64 +1,65 @@
-<nav>
-  <img id="nav-logo" src="assets/images/logo.png" (click)="redirectToHomePage()" />
-  <div class="name" (click)="redirectToHomePage()">Alex Fang</div>
-  <div class="nav-container">
-    <div class="desktop-nav">
-      <ul>
-        <li>
-          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page" (click)="redirectToHomePage()">Home</a>
-        </li>
-        <li>
-          <a routerLink="/about-me" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page">About Me</a>
-        </li>
-        <li>
-          <a routerLink="/projects" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page">Projects</a>
-        </li>
-      </ul>
+<div class="page">
+  <nav>
+    <img id="nav-logo" src="assets/images/logo.png" (click)="redirectToHomePage()" />
+    <div class="name" (click)="redirectToHomePage()">Alex Fang</div>
+    <div class="nav-container">
+      <div class="desktop-nav">
+        <ul>
+          <li>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+              ariaCurrentWhenActive="page" (click)="redirectToHomePage()">Home</a>
+          </li>
+          <li>
+            <a routerLink="/about-me" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+              ariaCurrentWhenActive="page">About Me</a>
+          </li>
+          <li>
+            <a routerLink="/projects" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+              ariaCurrentWhenActive="page">Projects</a>
+          </li>
+        </ul>
+      </div>
+      <div id="hamburger-icon" [class]="isMenuOpen?'open':''" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-    <div id="hamburger-icon" [class]="isMenuOpen?'open':''" (click)="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <ul [ngClass]="{'open': isMenuOpen}">
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          ariaCurrentWhenActive="page" (click)="closeMenu()">Home</a>
+      </li>
+      <li>
+        <a routerLink="/about-me" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          ariaCurrentWhenActive="page" (click)="closeMenu()">About Me</a>
+      </li>
+      <li>
+        <a routerLink="/projects" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          ariaCurrentWhenActive="page" (click)="closeMenu()">Projects</a>
+      </li>
+    </ul>
   </div>
-</nav>
 
-<div class="mobile-nav">
-  <ul [ngClass]="{'open': isMenuOpen}">
-    <li>
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-        ariaCurrentWhenActive="page" (click)="closeMenu()">Home</a>
-    </li>
-    <li>
-      <a routerLink="/about-me" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-        ariaCurrentWhenActive="page" (click)="closeMenu()">About Me</a>
-    </li>
-    <li>
-      <a routerLink="/projects" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-        ariaCurrentWhenActive="page" (click)="closeMenu()">Projects</a>
-    </li>
-  </ul>
-</div>
+  <main *ngIf="!showLoadScreen" [class]="isMenuOpen?'nav-open':''">
+    <router-outlet></router-outlet>
+  </main>
 
-<main *ngIf="!showLoadScreen" [class]="isMenuOpen?'nav-open':''">
-  <router-outlet></router-outlet>
-</main>
-
-
-<div *ngIf="showLoadScreen" id="load-screen">
-  <div class="logo">
-    <div class="line hexagon hex-line1"></div>
-    <div class="line hexagon hex-line2"></div>
-    <div class="line hexagon hex-line3"></div>
-    <div class="line hexagon hex-line4"></div>
-    <div class="line hexagon hex-line5"></div>
-    <div class="line hexagon hex-line6"></div>
-    <div class="char-line char-line1"></div>
-    <div class="char-line char-line2"></div>
-    <div class="char-line char-line3"></div>
+  <div *ngIf="showLoadScreen" id="load-screen">
+    <div class="logo">
+      <div class="line hexagon hex-line1"></div>
+      <div class="line hexagon hex-line2"></div>
+      <div class="line hexagon hex-line3"></div>
+      <div class="line hexagon hex-line4"></div>
+      <div class="line hexagon hex-line5"></div>
+      <div class="line hexagon hex-line6"></div>
+      <div class="char-line char-line1"></div>
+      <div class="char-line char-line2"></div>
+      <div class="char-line char-line3"></div>
+    </div>
   </div>
 </div>
