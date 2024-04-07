@@ -28,9 +28,9 @@
     "sliderImgPath": "assets/images/profile-slider.png",
     "snapshotImgPaths": [
       "assets/images/profile2.png",
-      "assets/images/audioengine_snapshot2.png",
-      "assets/images/audioengine_snapshot3.png",
-      "assets/images/audioengine_snapshot4.png"
+      "assets/images/profile3.png",
+      "assets/images/profile4.png",
+      "assets/images/profile5.png"
     ],
     "shortDescription": "A responsive portfolio showcase with an artisitc layout and subtle animation. This very own webpage is the project!",
     "longDescription": "This project is a celebration of responsiveness and an immersive user experience, demonstrating the seamless integration of cutting-edge technologies.</br>Angular takes the lead in providing a robust and interactive framework, ensuring a fluid and dynamic navigation experience. SASS, combined with CSS, brings forth a visually stunning theme, enhancing the aesthetics and user engagement. JavaScript adds a layer of functionality, enriching the user interface with dynamic features. The HTML foundation ensures a well-structured and accessible profile that serves as a canvas for creativity.</br>With a keen focus on responsiveness and user-centric design, this showcase profile adapts seamlessly to various devices, ensuring a consistent and engaging experience for every visitor.",
