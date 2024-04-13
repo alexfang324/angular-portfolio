@@ -19,7 +19,8 @@
       "Incorporates preventative measures (data validation and cleaning, harmful text escaping)",
       "Integrate remote AzureDB through entity framework",
       "A fully responsive layout"
-    ]
+    ],
+    "github": "https://github.com/alexfang324/nova"
   },
   {
     "id": "angular-profile",
@@ -40,7 +41,8 @@
       "Clean and artisitic layout with small UI animations",
       "A fully responsive layout",
       "Built from planning to deploy within a week"
-    ]
+    ],
+    "github": "https://github.com/alexfang324/angular-portfolio"
   },
   {
     "id": "audio-motor",
@@ -62,7 +64,8 @@
       "Code reuse through SASS mixins and placeholders",
       "Crafted carousels and sliders through Slick",
       "Use of Gulp as build tool"
-    ]
+    ],
+    "github": "https://github.com/alexfang324/audio-motor"
   },
   {
     "id": "ray-bike-suppreme",
@@ -83,7 +86,8 @@
       "Well-designed class inheritance hierarchy to promote code reuse",
       "A real-time gaming application necessitating precise numerical computation to deliver a seamless and immersive gameplay experience.",
       "Designed for scalability in object interaction complexity"
-    ]
+    ],
+    "github": "https://github.com/alexfang324/ray-bike-suppreme"
   },
   {
     "id": "mvdb",
@@ -105,7 +109,8 @@
       "Numerous interactive UI animations and features implemented to captivate the user",
       "A responsive and immersive layout",
       "Real time movie data from TMDB database"
-    ]
+    ],
+    "github": "https://github.com/alexfang324/react-movie-app"
   },
   {
     "id": "mace-travel",
@@ -124,7 +129,8 @@
     "highlights": [
       "Built using only HTML, CSS, and JQuery",
       "A responsive layout"
-    ]
+    ],
+    "github": "https://github.com/alexfang324/mace-travel-agency"
   },
   {
     "id": "ticket-app",
@@ -146,7 +152,8 @@
       "Implemented CICD through GitHub Action",
       "written unit tests in Jest to validate code behavior",
       "handled user authentication through Google sign-in"
-    ]
+    ],
+    "github": "https://github.com/alexfang324/microservice-ticketing-site"
   },
   {
     "id": "streaming-app",
@@ -166,7 +173,8 @@
     "highlights": [
       "Allow users to live stream and watch live stream",
       "Implemented both class components and functional components"
-    ]
+    ],
+    "github": "https://github.com/alexfang324/react-redux-streaming-site"
   },
   {
     "id": "express-billing",
@@ -187,6 +195,7 @@
       "Authentication and authorization handled through Passport.js",
       "Views handled through EJS",
       "Data stored in a MongoDB database in the cloud"
-    ]
+    ],
+    "github": "https://github.com/alexfang324/express-billing"
   }
 ]

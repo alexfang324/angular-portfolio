@@ -14,4 +14,6 @@ export interface Project {
   tag_ids: number[];
   tags?: Tag[];
   highlights: string[];
+  github: string;
+  url?: string;
 }

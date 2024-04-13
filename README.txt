@@ -1,0 +1,1 @@
+To start the project in development, run "ng serve --open" in the root directory

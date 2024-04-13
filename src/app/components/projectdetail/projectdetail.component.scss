@@ -55,6 +55,30 @@ $header-height: 200px;
   gap: 50px;
 }
 
+.github-button {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 105px;
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  background-color: $theme-background-secondary-color;
+
+  &:active {
+    color: $on-hover-color;
+  }
+
+  i {
+    box-sizing: border-box;
+    margin-right: 10px;
+    font-size: 20px;
+    line-height: 30px;
+    align-self: center;
+  }
+}
+
 .slider-container {
   position: relative;
   width: 100%;
