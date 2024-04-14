@@ -55,19 +55,20 @@ $header-height: 200px;
   gap: 50px;
 }
 
-.github-button {
+.link-button {
   box-sizing: border-box;
   display: inline-block;
-  width: 105px;
   height: 40px;
   padding: 5px 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
   border-radius: 5px;
   text-decoration: none;
   color: black;
   background-color: $theme-background-secondary-color;
 
-  &:active {
-    color: $on-hover-color;
+  &:hover {
+    background-color: $on-hover-color;
   }
 
   i {
@@ -76,6 +77,14 @@ $header-height: 200px;
     font-size: 20px;
     line-height: 30px;
     align-self: center;
+  }
+
+  &.github {
+    width: 105px;
+  }
+
+  &.site {
+    width: 120px;
   }
 }
 
@@ -223,7 +232,7 @@ $header-height: 200px;
 
 @media (min-width: 1024px) {
   .tech-content {
-    grid-template-columns: 200px 200px 1fr;
+    grid-template-columns: 200px 250px 1fr;
   }
 
   .grid-item:nth-child(3) {
@@ -232,9 +241,21 @@ $header-height: 200px;
 }
 
 .snapshot-section {
+  position: relative;
   background-color: $theme-background-secondary-color;
   padding-bottom: 50px;
+  margin-bottom: 50px;
   width: 100%;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 50px;
+    left: 0;
+    bottom: -50px;
+    background-color: $theme-background-color;
+  }
 
   h1 {
     width: 100%;

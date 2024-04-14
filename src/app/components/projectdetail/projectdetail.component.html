@@ -9,10 +9,12 @@
       <div class="hover-text">Hover Me</div>
     </div>
     <div>
-      <p>{{project?.longDescription}}</p>
+      <div [innerHTML]="project?.longDescription"></div>
 
-      <a href={{project?.github}} target="_blank" class="github-button"><i
+      <a href={{project?.github}} target="_blank" class="link-button github"><i
           class="fa fa-brands fa-github social-media-icon"></i>GitHub</a>
+      <a *ngIf="project?.url" href={{project?.url}} target="_blank" class="link-button site"><i
+          class="fa fa-solid fa-globe social-media-icon"></i>Visit Site</a>
     </div>
   </div>
   <div class="tech-section">

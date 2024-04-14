@@ -11,7 +11,7 @@
       "assets/images/nova6.png"
     ],
     "shortDescription": "A fullstack, stand alone website built using ASP Core with login, payment, fulfillment, and review functionality",
-    "longDescription": "Welcome to our dynamic fashion e-commerce platform, a meticulously developed multi-page project utilizing the robust features of C# ASP.NET. Built with the efficient Entity and Identity frameworks, this web application strikes a balance between functionality and user experience.<\br> Crafted with a blend of JavaScript, CSS, and HTML, the user interface delivers a straightforward and visually appealing front-end experience through Razor views. Behind the scenes, the Entity framework ensures optimal data management, while the Identity framework takes care of authentication and authorization seamlessly. The smooth integration of PayPal enhances the payment process, providing users with secure and hassle-free transactions. This large-scale project is a product of focused development, delivering a reliable and feature-rich fashion e-commerce platform without compromising on the essence of user-friendly design and technical finesse.",
+    "longDescription": "<p>This website provides a seamless shopping experience from adding items to cart and checking them out to receiving email notification on order confirmation, order tracking lookup, and leaving product reviews. Logged in users may also manage their default addresses on profiles or see their order histories.</p><p>The admin pages were also designed with careful consideration to the user experience. Pagination and search filters are added in every page to make order and listing management easier. Asynchronous requests are used whenever possible to prevent the pages from frequent re-rendering and displacing the data in the table.</p>",
     "theme_ids": [3, 4, 7],
     "tag_ids": [3, 13, 7, 4, 16],
     "highlights": [
@@ -34,7 +34,7 @@
       "assets/images/profile5.png"
     ],
     "shortDescription": "A responsive portfolio showcase with an artisitc layout and subtle animation. This very own webpage is the project!",
-    "longDescription": "This project is a celebration of responsiveness and an immersive user experience, demonstrating the seamless integration of cutting-edge technologies.</br>Angular takes the lead in providing a robust and interactive framework, ensuring a fluid and dynamic navigation experience. SASS, combined with CSS, brings forth a visually stunning theme, enhancing the aesthetics and user engagement. JavaScript adds a layer of functionality, enriching the user interface with dynamic features. The HTML foundation ensures a well-structured and accessible profile that serves as a canvas for creativity.</br>With a keen focus on responsiveness and user-centric design, this showcase profile adapts seamlessly to various devices, ensuring a consistent and engaging experience for every visitor.",
+    "longDescription": "<p>This project is the portfolio website itself. Built using Angular, this project is not only serving as a show case for my other projects, but it’s also a learning opportunity to explore the similarities and difference of itself to React and Vue.</p><p>The layout of this website takes on a design studio-like styling to add yet another very different webpage design to my experience to demonstrate  my coding competence. The layout and font-size responsiveness of this website, together with the subtle UI animations crafted using only TypeScript and CSS, enhance the artistic touch of this website.</p>",
     "theme_ids": [1, 5, 6],
     "tag_ids": [1, 12, 14],
     "highlights": [
@@ -47,16 +47,16 @@
   {
     "id": "audio-motor",
     "name": "Audio Motor",
-    "mainImgPath": "assets/images/audioengine_snapshot1.png",
-    "sliderImgPath": "assets/images/audioengine.png",
+    "mainImgPath": "assets/images/audio-main.png",
+    "sliderImgPath": "assets/images/audio-slider.png",
     "snapshotImgPaths": [
-      "assets/images/audioengine_snapshot1.png",
-      "assets/images/audioengine_snapshot2.png",
-      "assets/images/audioengine_snapshot3.png",
-      "assets/images/audioengine_snapshot4.png"
+      "assets/images/audio1.png",
+      "assets/images/audio2.png",
+      "assets/images/audio3.png",
+      "assets/images/audio4.png"
     ],
     "shortDescription": "A visually rich brand page with a modern layout and fine grain responsiveness",
-    "longDescription": "Crafted with SASS, JavaScript, and HTML, this website is a modern showcase, mirroring the refined layouts and design details reminiscent of major brand websites.</br>SASS brings a touch of elegance to the styling, creating a polished theme that resonates with contemporary aesthetics. JavaScript adds subtle yet impactful interactions, ensuring a dynamic user experience without compromising the website's clean and modern appearance. HTML forms the structural foundation, facilitating a well-organized and accessible layout.</br>Immerse yourself in a digital experience that transcends conventional design boundaries. This website is more than just responsive; it's an exploration of modernity and style, carefully curated to resonate with the aesthetic preferences of major brands. Welcome to a digital realm where design intricacies and layout details converge to create an online experience reminiscent of the big players in the industry.",
+    "longDescription": "<p> Crafted with SASS, JavaScript, and HTML, this website is a modern showcase, mirroring the refined layouts and design details reminiscent of major brand websites. </p>",
     "theme_ids": [1, 4, 6],
     "tag_ids": [12, 7],
     "highlights": [
@@ -79,7 +79,7 @@
       "assets/images/bike4.png"
     ],
     "shortDescription": "Simple JavaScript game with well-designed class inheritance hierarchy to demonstrate the powerful of object oriented programming",
-    "longDescription": "Welcome to the exhilarating universe of our JavaScript Ray-Bike game – a thrilling rendition of the classic snake game, amplified with obstacles, lasers, and real-time many-body interactions. Expertly crafted using JavaScript, CSS, and HTML, this game exemplifies the potency of object-oriented programming, employing a sophisticated multi-level object inheritance model for unrivaled code reusability and modularity.</br>Immerse yourself in the heart-pounding action as you navigate through a visually captivating terrain, where every twist and turn brings forth real-time responsiveness. JavaScript takes the lead, orchestrating a seamless gaming experience, while CSS adds a layer of aesthetic finesse, creating a polished and visually engaging environment. HTML lays the structural groundwork, ensuring a robust foundation for the game's multifaceted elements.</br>Beyond the thrill of gameplay, this project serves as a showcase for the versatility of JavaScript in building intricate and interactive applications. The object-oriented paradigm not only streamlines the codebase but also fosters a modular design, facilitating scalability and ease of maintenance. Prepare for an immersive journey that not only challenges your gaming prowess but also underscores the dynamic capabilities of JavaScript in delivering an exceptional and cutting-edge gaming experience. Welcome to the forefront of gaming innovation, where code sophistication meets adrenaline-pumping gameplay.",
+    "longDescription": "<p>Built using only JavaScript, CSS, and HTML, this is a thrilling rendition of the classic snake game, amplified with obstacles and lasers. The project demonstrates the power of object oriented programming by employing a multi-level class inheritance scheme to maximize code reuse, requiring a careful analysis on the similarities and difference of sibling classes. The project also entails a physics aspect that requires math and coding competency to carry out the many-body interaction correctly in real time gameplay.</p>",
     "theme_ids": [1, 5, 7],
     "tag_ids": [7, 4],
     "highlights": [
@@ -87,7 +87,8 @@
       "A real-time gaming application necessitating precise numerical computation to deliver a seamless and immersive gameplay experience.",
       "Designed for scalability in object interaction complexity"
     ],
-    "github": "https://github.com/alexfang324/ray-bike-suppreme"
+    "github": "https://github.com/alexfang324/ray-bike-suppreme",
+    "url": "http://raybike.alexfang.ca"
   },
   {
     "id": "mvdb",
@@ -101,7 +102,7 @@
       "assets/images/movie-main.png"
     ],
     "shortDescription": "A movie showcase website with real time data, immersive and thoughtful ui designs in React",
-    "longDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "longDescription": "<p>This project showcases live movie data from MVDB API where users can view the synopsis and trailers of the latest movies. Through the live refresh search bar, user can also find movie information for older movies. Users can easily add movies to the favourite page and watch list page by hovering the cursor over the movie thumbnail to trigger its overlay screen. The layout of the website is designed to provide an immersive reading experience through the use of a background poster that fades outs at the bottom.</p>",
     "theme_ids": [1, 4, 6],
     "tag_ids": [10, 11, 7, 4],
     "highlights": [
@@ -110,7 +111,8 @@
       "A responsive and immersive layout",
       "Real time movie data from TMDB database"
     ],
-    "github": "https://github.com/alexfang324/react-movie-app"
+    "github": "https://github.com/alexfang324/react-movie-app",
+    "url": "https://react-movie-9wb2epgcq-alexs-projects-8f9f78b1.vercel.app/"
   },
   {
     "id": "mace-travel",
@@ -123,14 +125,15 @@
       "assets/images/mace3.png"
     ],
     "shortDescription": "Multi-page teamwork project that explores the concept of responsive design and JQuery",
-    "longDescription": "As a collaborative effort within a team, I engaged in a multi-page project that delved into the intricacies of responsive design and JQuery implementation. Our project aimed to create a seamless and adaptable user experience across various devices, showcasing our adeptness in employing contemporary web development methodologies. Through this endeavor, we honed our skills in crafting user-centric interfaces and optimizing performance, contributing to a comprehensive exploration of modern web design principles.",
+    "longDescription": "<p>Mace Travel is an interstellar travel agency site that offers vacation packages to aliens. It’s our first collaborative attempt to responsive web design in a team environment. The website is built using JQuery for toggling components on and off and for simple ui animations</p>",
     "theme_ids": [1, 4, 6],
     "tag_ids": [7, 4],
     "highlights": [
       "Built using only HTML, CSS, and JQuery",
       "A responsive layout"
     ],
-    "github": "https://github.com/alexfang324/mace-travel-agency"
+    "github": "https://github.com/alexfang324/mace-travel-agency",
+    "url": "http://mace.alexfang.ca"
   },
   {
     "id": "ticket-app",
